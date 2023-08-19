@@ -7,6 +7,13 @@ useHead({
       content: "Comprehensive documentation for life's little peculiarities.",
     },
   ],
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    },
+  ],
 });
 </script>
 

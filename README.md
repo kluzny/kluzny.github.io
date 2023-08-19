@@ -37,14 +37,7 @@ yarn dev
 Build the application for production:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
+make build
 ```
 
 Locally preview production build:
@@ -66,3 +59,4 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 ## TODO
 
 * eslint + prettier
+* move to kyle.luzny.dev and setup a 301 from apex and www

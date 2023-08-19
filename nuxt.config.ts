@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   ],
   nitro: {
     output: {
-      publicDir: '../dist', // replaces the magic dist symlink with a real directory
+      publicDir: '../docs', // replaces the magic dist symlink with a real directory expected by github pages
     }
   }
 })

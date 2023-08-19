@@ -1,6 +1,9 @@
 <script setup lang="ts">
 useHead({
   title: "Luzny.dev",
+  htmlAttrs: {
+    lang: "en",
+  },
   meta: [
     {
       name: "description",
@@ -19,6 +22,6 @@ useHead({
 
 <template>
   <NuxtLayout>
-    <h1>hello world</h1>
+    <NuxtPage />
   </NuxtLayout>
 </template>

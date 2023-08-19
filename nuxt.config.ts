@@ -4,4 +4,9 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss'
   ],
+  nitro: {
+    output: {
+      publicDir: '../dist', // replaces the magic dist symlink with a real directory
+    }
+  }
 })

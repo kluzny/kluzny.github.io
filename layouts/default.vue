@@ -37,6 +37,10 @@ useHead({
   font-family: 'Roboto', sans-serif;
 }
 
+.default-layout {
+  height: 100vh;
+}
+
 ::selection {
   background: #E9D8FD;
   color:#202684;

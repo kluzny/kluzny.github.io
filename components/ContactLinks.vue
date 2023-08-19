@@ -4,10 +4,7 @@
       <p class="font-bold my-4 md:my-12">Contact Me</p>
 
       <ul class="flex flex-wrap justify-between flex-row md:flex-col">
-        <li><a href="#" class="nav mx-2 md:mx-0">Twitter</a></li>
-        <li><a href="#" class="nav mx-2 md:mx-0">Instagram</a></li>
-        <li><a href="#" class="nav mx-2 md:mx-0">Dribbble</a></li>
-        <li><a href="#" class="nav mx-2 md:mx-0">etc</a></li>
+        <li><a href="//github.com/kluzny" class="nav mx-2 md:mx-0">Github</a></li>
       </ul>
     </div>
   </div>

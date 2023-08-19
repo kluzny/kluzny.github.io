@@ -1,4 +1,8 @@
-build:
+clean:
+	npx nuxi cleanup
+	rm -rf docs/
+
+build: clean
 	npx nuxi generate
 
 favicon:

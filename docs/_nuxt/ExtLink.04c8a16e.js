@@ -1,1 +1,0 @@
-import{_ as o}from"./_plugin-vue_export-helper.c27b6911.js";import{o as r,c as n,h as t}from"./entry.41456008.js";const _={},c={rel:"noopener noreferrer"};function s(e,a){return r(),n("a",c,[t(e.$slots,"default")])}const m=o(_,[["render",s]]);export{m as _};

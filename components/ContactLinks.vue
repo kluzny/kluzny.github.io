@@ -5,7 +5,7 @@
 
       <ul class="flex flex-wrap justify-between flex-row md:flex-col">
         <li>
-          <ExtLink href="//github.com/kluzny" class="mx-2 md:mx-0">
+          <ExtLink href="https://github.com/kluzny" class="mx-2 md:mx-0">
             Github
           </ExtLink>
         </li>

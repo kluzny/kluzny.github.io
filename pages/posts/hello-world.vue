@@ -10,10 +10,10 @@ const meta = {
   <BlogPost :post-title="meta.title">
     <p>
       Decided to make a slightly over-engineered blog using
-      <ExtLink href="//nuxt.com">
+      <ExtLink href="https://nuxt.com">
         Nuxt
       </ExtLink>
-      <ExtLink href="//www.tailwindtoolbox.com/templates/minimalist-blog">
+      <ExtLink href="https://www.tailwindtoolbox.com/templates/minimalist-blog">
         Minimalist Blog
       </ExtLink>.
     </p>

@@ -61,3 +61,4 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 * eslint + prettier
 * move to kyle.luzny.dev and setup a 301 from apex and www
 * figure out how to default the author name in content files
+* pick a new color scheme for light+dark

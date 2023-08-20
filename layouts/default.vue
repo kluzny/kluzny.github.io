@@ -72,7 +72,6 @@ a:hover {
   color: #B794F4;
   font-weight: bold;
   text-decoration: none;
-  padding-bottom: 2px;
   background: linear-gradient(to right, #9F7AEA, #E9D8FD);
   background-repeat: repeat-x;
   background-size: 100% 2px;

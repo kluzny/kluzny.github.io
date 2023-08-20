@@ -4,7 +4,11 @@
       <p class="font-bold my-4 md:my-12">Contact Me</p>
 
       <ul class="flex flex-wrap justify-between flex-row md:flex-col">
-        <li><a href="//github.com/kluzny" class="nav mx-2 md:mx-0">Github</a></li>
+        <li>
+          <ExtLink href="//github.com/kluzny" class="mx-2 md:mx-0">
+            Github
+          </ExtLink>
+        </li>
       </ul>
     </div>
   </div>

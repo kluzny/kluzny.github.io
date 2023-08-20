@@ -1,6 +1,8 @@
+DIST_DIR = /docs # still feels dirty to use docs
+
 clean:
 	npx nuxi cleanup
-	rm -rf docs/
+	rm -rf $(DIST_DIR)
 
 build: clean
 	npx nuxi generate

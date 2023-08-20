@@ -1,0 +1,1 @@
+import{f as e,o as n,_ as t}from"./entry.2b57bd30.js";import{_}from"./_plugin-vue_export-helper.c27b6911.js";const c={};function r(s,a){const o=t;return n(),e(o,{name:"posts-hello-world"})}const p=_(c,[["render",r]]);export{p as default};

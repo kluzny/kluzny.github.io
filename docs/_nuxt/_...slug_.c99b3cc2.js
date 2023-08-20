@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper.c27b6911.js";import{c as t,o as s,a as o}from"./entry.41456008.js";const _={},c=o("h1",{class:"font-bold my-12"},"Post Not Found",-1),n=o("p",null,"Be not afraid. There is more where that came from.",-1),r=o("p",null,"👈",-1),a=[c,n,r];function l(d,i){return s(),t("div",null,a)}const h=e(_,[["render",l]]);export{h as default};

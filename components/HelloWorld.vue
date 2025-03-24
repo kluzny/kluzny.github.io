@@ -5,7 +5,7 @@ const double = computed(() => count.value * 2)
 </script>
 
 <template>
-  <h2 class="underline">Hello World</h2>
+  <h2 class="underline">Hello World!</h2>
   <p>Count: {{count}}</p>
   <p>Double: {{double}}</p>
   <button @click="increment">

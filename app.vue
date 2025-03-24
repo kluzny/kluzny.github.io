@@ -4,7 +4,7 @@
   </div>
   <section>
     <NuxtLink to="/">Home</NuxtLink> |
-    <NuxtLink to="/posts/hello-world">Hello</NuxtLink> |
+    <NuxtLink to="/posts/hello-world">Hello World!</NuxtLink> |
     <NuxtLink to="/about">About</NuxtLink>
   </section>
   <section>

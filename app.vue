@@ -12,7 +12,7 @@ const posts = [
 
 <template>
   <NuxtRouteAnnouncer />
-  <div class="flex justify-center items-start space-x-2 mt-8 bg-black">
+  <div class="flex justify-center items-start space-x-2 mt-8">
     <nav class="flex flex-col justify-start items-start border-r-4 border-lime-500 p-4">
       <ul class="flex flex-col space-y-2 mb-2 w-full">
         <li class="text-lg border-b-2 link">
@@ -38,6 +38,9 @@ const posts = [
       <NuxtPage />
     </section>
   </div>
+  <footer class="flex justify-center items-center mt-8">
+    <ThemePicker />
+  </footer>
 </template>
 
 <style>

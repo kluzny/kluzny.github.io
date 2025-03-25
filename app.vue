@@ -1,10 +1,4 @@
 <script setup>
-useHead({
-  bodyAttrs: {
-    class: 'bg-white text-black dark:bg-black dark:text-lime-500'
-  }
-});
-
 const posts = [
   { name: 'Hello World!', path: '/posts/hello-world' },
 ];
@@ -13,7 +7,7 @@ const posts = [
 <template>
   <NuxtRouteAnnouncer />
   <div class="flex justify-center items-start space-x-2 mt-8">
-    <nav class="flex flex-col justify-start items-start border-r-4 border-lime-500 p-4">
+    <nav class="flex flex-col justify-start items-start border-r-4 dark:border-lime-500 p-4">
       <ul class="flex flex-col space-y-2 mb-2 w-full">
         <li class="text-lg border-b-2 link">
           <NuxtLink to="/" class="block w-full font-bold">

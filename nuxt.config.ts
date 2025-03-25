@@ -23,4 +23,8 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  colorMode: {
+    preference: 'system',
+    fallback: 'dark',
+  },
 })

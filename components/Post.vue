@@ -11,7 +11,6 @@ const props = defineProps(
 )
 
 const post = await content(props.content);
-
 </script>
 
 <template>

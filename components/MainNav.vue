@@ -1,6 +1,8 @@
 <script setup>
 const posts = [
   { name: 'Hello World!', path: '/posts/hello-world' },
+  { name: 'Markdown Demo', path: '/posts/markdown-demo' },
+  { name: 'Missing Post?', path: '/posts/missing' },
 ];
 </script>
 
@@ -32,6 +34,7 @@ const posts = [
   @reference "../assets/css/main.css";
 
    nav .link {
+    @apply whitespace-nowrap;
     @apply text-stone-900 hover:text-stone-500;
     @apply dark:text-lime-500 dark:hover:text-lime-200;
    }

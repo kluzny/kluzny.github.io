@@ -14,7 +14,7 @@ This post was written in markdown using [@nuxt/content 🌐](https://content.nux
 * markdown
 * styling
 
-## Ordered Lists
+## Nested Lists
 
 1. foo
 2. bar
@@ -41,6 +41,9 @@ echo "hello linux community!"
 ### ruby
 ```ruby
 puts "hello ruby community!"
+=> nil
+puts 2 + 2
+=> 4
 ```
 
 ### code

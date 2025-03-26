@@ -103,5 +103,11 @@ const post = await content(props.content);
     @apply p-4 border-2 rounded-sm;
     @apply border-stone-600 dark:border-lime-600;
   }
+
+  [line]::before {
+    content: attr(line) "|";
+    @apply p-1 mr-2;
+    @apply text-stone-400;
+  }
 }
 </style>

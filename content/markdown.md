@@ -31,8 +31,10 @@ Thanks [lorem ipsum generator 🌐](https://loremipsum.io)
 
 ## Code Blocks
 
-### bash
-```bash
+Inline code looks like `this` or maybe `self` if that's your thing.
+
+### shell
+```shell
 echo "hello linux community!"
 ```
 
@@ -43,7 +45,7 @@ puts "hello ruby community!"
 
 ### code
 ```
-print("hello additional languages that print strings")
+print("hello communities that print strings")
 ```
 
 ## Quotes

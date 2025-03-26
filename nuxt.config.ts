@@ -27,4 +27,33 @@ export default defineNuxtConfig({
     preference: 'system',
     fallback: 'dark',
   },
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            default: 'github-light',
+            dark: 'github-dark',
+          },
+          langs: [
+            'css',
+            'gdscript',
+            'html',
+            'js',
+            'js',
+            'json',
+            'md',
+            'mdc',
+            'ruby',
+            'php',
+            'rust',
+            'shell',
+            'ts',
+            'vue',
+            'yaml'
+          ],
+        },
+      },
+    },
+  },
 })

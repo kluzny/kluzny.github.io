@@ -18,8 +18,9 @@ body {
 }
 
 .link {
-  @apply dark:border-lime-500 dark:hover:border-lime-200;
+  @apply text-sky-600 hover:text-sky-400;
   @apply dark:text-lime-500 dark:hover:text-lime-200;
+  @apply dark:border-lime-500 dark:hover:border-lime-200;
 }
 
 .button {

@@ -29,6 +29,13 @@ const posts = [
 </template>
 
 <style>
+  @reference "../assets/css/main.css";
+
+   nav .link {
+    @apply text-stone-900 hover:text-stone-500;
+    @apply dark:text-lime-500 dark:hover:text-lime-200;
+   }
+
   .blink {
     animation: blink-animation 1s steps(5, start) infinite;
     -webkit-animation: blink-animation 1s steps(5, start) infinite;

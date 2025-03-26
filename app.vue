@@ -1,3 +1,10 @@
+<script setup lang="ts">
+  useSeoMeta({
+    title: "kyle.luzny.dev",
+    description: "A personal collection of technology musings",
+  });
+</script>
+
 <template>
   <NuxtRouteAnnouncer />
   <div class="flex justify-center items-start space-x-2 mt-8">

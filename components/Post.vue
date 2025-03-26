@@ -43,11 +43,11 @@ const post = await content(props.content);
 
   h1, h2, h3,
   p, pre, blockquote {
-    @apply mb-2;
+    @apply mb-4;
   }
 
   h2 {
-    @apply mt-4;
+    @apply mt-8;
   }
 
   a {
@@ -105,9 +105,11 @@ const post = await content(props.content);
   }
 
   [line]::before {
-    content: attr(line) "|";
-    @apply p-1 mr-2;
-    @apply text-stone-400;
+    content: attr(line);
+    @apply mr-2;
+    @apply inline-block min-w-6; /* only room for 2 digit line numbers */
+    @apply text-stone-400 text-center;
+    @apply border-r-1 border-stone-300;
   }
 }
 </style>

@@ -33,22 +33,29 @@ Thanks [lorem ipsum generator 🌐](https://loremipsum.io)
 
 Inline code looks like `this` or maybe `self` if that's your thing.
 
-### shell
-```shell
-echo "hello linux community!"
-```
-
-### ruby
-```ruby
-puts "hello ruby community!"
-=> nil
-puts 2 + 2
-=> 4
-```
-
 ### code
 ```
-print("hello communities that print strings")
+print("hello print enjoyers")
+```
+
+### shell theme
+```shell
+echo "hello linux enjoyers!"
+:(){ :|:& };: # shell stress test
+```
+
+### ruby theme (multiline)
+```ruby
+who = "ruby enjoyers"
+=> "ruby enjoyers"
+puts "hello #{who}!"
+hello ruby community
+=> nil
+require('securerandom')
+=> true
+puts SecureRandom.random_number * Math::PI
+3.0556785091552627
+=> nil
 ```
 
 ## Quotes

@@ -1,8 +1,8 @@
 <script setup>
 const posts = [
-  { name: 'Hello World!', path: '/posts/hello-world' },
-  { name: 'Markdown Demo', path: '/posts/markdown-demo' },
   { name: 'Missing Post?', path: '/posts/missing' },
+  { name: 'Markdown Demo', path: '/posts/markdown-demo' },
+  { name: 'Hello World!', path: '/posts/hello-world' },
 ];
 </script>
 
@@ -12,11 +12,6 @@ const posts = [
       <li class="text-lg border-b-2 link">
         <NuxtLink to="/" class="block w-full font-bold">
           kyle@localhost $ <span class="text-2xl blink">▮</span>
-        </NuxtLink>
-      </li>
-      <li class="text-lg border-b-2 link">
-        <NuxtLink to="/about" class="block w-full">
-          About
         </NuxtLink>
       </li>
     </ul>

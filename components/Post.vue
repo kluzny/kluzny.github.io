@@ -14,13 +14,13 @@ const post = await content(props.content);
 </script>
 
 <template>
-  <section class="post">
+  <section :class='{post: !!post, missing: !post}'>
     <ContentRenderer v-if="post" :value="post" />
-    <div v-else class="flex items-center">
+    <div v-else class="flex items-center missing">
       <NuxtImg src="/tux_head_sad.png"
-              class="inline"
+              class="inline w-12 pr-2"
               alt="emoji sized pixelated bust of tux the linux penguin, portrayed sadly with a single tear." />
-      <h2>no really, post not found</h2>
+      <h2 class="my-0 text-2xl">no really, post not found.</h2>
     </div>
   </section>
 </template>
@@ -82,12 +82,13 @@ const post = await content(props.content);
     @apply border-stone-600 dark:border-lime-600;
   }
 
+  /* using block quote lists as the author */
   blockquote ul {
     @apply list-none;
   }
 
   blockquote ul li {
-    @apply text-right font-bold italic;
+    @apply text-center font-bold italic text-xl;
   }
 
   code {

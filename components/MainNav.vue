@@ -1,5 +1,6 @@
 <script setup>
 const posts = [
+  { name: 'Cursory Whimsy', path: '/posts/cursory-whimsy' },
   { name: 'Missing Post?', path: '/posts/missing' },
   { name: 'Markdown Demo', path: '/posts/markdown-demo' },
   { name: 'Hello World!', path: '/posts/hello-world' },

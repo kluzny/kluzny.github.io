@@ -6,7 +6,7 @@ description: 'Adding whimisical mouse effects'
 
 # {{ $doc.title }}
 
-The internet, before it was 5 social media sites in a trenchcoat, used to be filled with to the absolute brim with custom cursors. For a variety of reasons, too many website designs stay in narrow lanes and never bother with silly user interactions.
+The internet, before it was 5 social media sites in a trenchcoat, used to be filled to the absolute brim with custom cursors. For a variety of reasons, too many website designs stay in narrow lanes and never bother with silly user interactions.
 
 
 ## Implementation

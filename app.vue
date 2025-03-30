@@ -13,9 +13,9 @@
   <NuxtRouteAnnouncer />
   <div class="min-h-screen w-full flex justify-center items-start space-x-2 mt-8">
     <MainNav />
-    <section class='rounded-sm p-4'>
+    <div class="rounded-sm p-4 w-sm lg:w-lg xl:w-2xl 2xl:w-4xl">
       <NuxtPage />
-    </section>
+    </div>
   </div>
   <footer class="flex justify-center items-center mt-8">
     <ThemePicker />

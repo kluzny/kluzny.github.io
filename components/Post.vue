@@ -91,6 +91,7 @@ const post = await content(props.content);
     @apply text-center font-bold italic text-xl;
   }
 
+  /* inline code */
   code {
     @apply p-1 rounded-sm;
   }
@@ -103,6 +104,7 @@ const post = await content(props.content);
   pre {
     @apply p-4 border-2 rounded-sm;
     @apply border-stone-600 dark:border-lime-600;
+    @apply overflow-x-auto;
   }
 
   [line]::before {

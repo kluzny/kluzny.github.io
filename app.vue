@@ -13,7 +13,7 @@
   <NuxtRouteAnnouncer />
   <div class="min-h-screen w-full flex justify-center items-start space-x-2 mt-8">
     <MainNav />
-    <div class="rounded-sm p-4 w-sm lg:w-lg xl:w-2xl 2xl:w-4xl">
+    <div class="rounded-sm p-4 w-sm md:w-lg lg:w-xl xl:w-4xl 4xl:w-8xl">
       <NuxtPage />
     </div>
   </div>

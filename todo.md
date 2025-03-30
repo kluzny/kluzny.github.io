@@ -2,7 +2,7 @@
 
 ## Features
 
-* responsive
+* better mobile nav
 * copyable code blocks
 * nav dynamically builds recent posts link based on metadata
 * figure out how to get shiki style code formatting in non-markdown posts

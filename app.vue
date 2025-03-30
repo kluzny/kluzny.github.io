@@ -11,7 +11,7 @@
 
 <template>
   <NuxtRouteAnnouncer />
-  <div class="flex justify-center items-start space-x-2 mt-8">
+  <div class="min-h-screen w-full flex justify-center items-start space-x-2 mt-8">
     <MainNav />
     <section class='rounded-sm p-4'>
       <NuxtPage />

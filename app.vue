@@ -16,7 +16,7 @@
            class="xl:hidden"/>
   <div class="min-h-screen flex justify-center items-start space-x-2 mx-auto w-full">
     <MainNav class="hidden xl:flex"/>
-    <div class="xl:mt-6 rounded-sm p-4 w-full bg-white dark:bg-black">
+    <div class="xl:mt-6 2xl:max-w-7xl rounded-sm p-4 w-full bg-white dark:bg-black">
       <NuxtPage />
     </div>
   </div>

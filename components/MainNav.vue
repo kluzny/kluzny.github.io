@@ -18,7 +18,7 @@
 </script>
 
 <template>
-  <nav class="flex flex-col justify-start items-start border-r-4 border-b-4 dark:border-lime-500 py-2 px-4"
+  <nav class="flex flex-col justify-start items-start border border-r-4 border-b-4 border-stone-700 dark:border-lime-500 py-2 px-4"
        :class="{'px-4': isExpanded, 'px-2': !isExpanded}">
     <div v-if='vertical' class='flex justify-between items-center w-full'>
       <NuxtLink to="/" class="w-full font-bold">

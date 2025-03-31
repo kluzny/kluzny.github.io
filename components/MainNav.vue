@@ -1,10 +1,5 @@
 <script setup>
-  const posts = [
-    { name: 'Cursory Whimsy', path: '/posts/cursory-whimsy' },
-    { name: 'Missing Post?', path: '/posts/missing' },
-    { name: 'Markdown Demo', path: '/posts/markdown-demo' },
-    { name: 'Hello World!', path: '/posts/hello-world' },
-  ];
+  import routes from '../helpers/routes.js';
 
   const { vertical } = defineProps({
     vertical: {
@@ -14,7 +9,6 @@
   });
 
   const isExpanded = ref(!vertical);
-
 </script>
 
 <template>
@@ -43,9 +37,9 @@
           kyle@localhost $ <span class="text-2xl blink">▮</span>
         </NuxtLink>
       </li>
-      <li v-for="link in posts" class="text-lg border-b-2 link">
-        <NuxtLink :to="link.path" class="block w-full">
-          {{ link.name }}
+      <li v-for="(path, name) in routes" class="text-lg border-b-2 link">
+        <NuxtLink :to="path" class="block w-full">
+          {{ name }}
         </NuxtLink>
       </li>
       <li class='flex justify-center items-center mt-4'>

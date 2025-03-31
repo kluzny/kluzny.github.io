@@ -12,9 +12,9 @@
 <template>
   <NuxtRouteAnnouncer />
   <MainNav vertical=true
-           class="sm:hidden"/>
+           class="xl:hidden"/>
   <div class="min-h-screen flex justify-center items-start space-x-2 mx-auto w-full">
-    <MainNav class="hidden"/>
+    <MainNav class="hidden xl:flex"/>
     <div class="rounded-sm p-4 w-full">
       <NuxtPage />
     </div>

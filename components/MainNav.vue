@@ -18,7 +18,7 @@
 </script>
 
 <template>
-  <nav class="flex flex-col justify-start items-start border-r-4 dark:border-lime-500 py-2 px-4"
+  <nav class="flex flex-col justify-start items-start border-r-4 border-b-4 dark:border-lime-500 py-2 px-4"
        :class="{'px-4': isExpanded, 'px-2': !isExpanded}">
     <div v-if='vertical' class='flex justify-between items-center w-full'>
       <NuxtLink to="/" class="w-full font-bold">
@@ -47,6 +47,9 @@
         <NuxtLink :to="link.path" class="block w-full">
           {{ link.name }}
         </NuxtLink>
+      </li>
+      <li class='flex justify-center items-center mt-4'>
+        <ThemePicker />
       </li>
     </ul>
   </nav>

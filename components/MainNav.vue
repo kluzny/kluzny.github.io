@@ -6,18 +6,39 @@
     { name: 'Hello World!', path: '/posts/hello-world' },
   ];
 
-  const isExpanded = ref(true);
+  const { vertical } = defineProps({
+    vertical: {
+      type: Boolean,
+      default: false,
+    },
+  });
+
+  const isExpanded = ref(!vertical);
+
 </script>
 
 <template>
-  <nav class="flex flex-col justify-start items-start border-r-4 dark:border-lime-500 py-4"
+  <nav class="flex flex-col justify-start items-start border-r-4 dark:border-lime-500 py-2 px-4"
        :class="{'px-4': isExpanded, 'px-2': !isExpanded}">
-    <button @click="isExpanded = !isExpanded">
+    <div v-if='vertical' class='flex justify-between items-center w-full'>
+      <NuxtLink to="/" class="w-full font-bold">
+        kyle@localhost $ <span class="text-2xl blink">▮</span>
+      </NuxtLink>
+      <button @click="isExpanded = !isExpanded"
+              :class="vertical ? 'self-end' : ''">
+        <Icon name="heroicons:bars-3-solid"
+              class='text-3xl hover:text-stone-400 dark:hover:text-lime-200' />
+      </button>
+    </div>
+    <button v-else
+            @click="isExpanded = !isExpanded"
+            :class="vertical ? 'self-end' : ''">
       <Icon name="heroicons:bars-3-solid"
             class='text-3xl hover:text-stone-400 dark:hover:text-lime-200' />
     </button>
+
     <ul v-if='isExpanded' class="flex flex-col space-y-2 mb-2 w-full">
-      <li class="text-lg border-b-2 link">
+      <li v-if='!vertical' class="text-lg border-b-2 link">
         <NuxtLink to="/" class="block w-full font-bold">
           kyle@localhost $ <span class="text-2xl blink">▮</span>
         </NuxtLink>

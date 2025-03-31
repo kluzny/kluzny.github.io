@@ -22,6 +22,8 @@ const post = await content(props.content);
               alt="emoji sized pixelated bust of tux the linux penguin, portrayed sadly with a single tear." />
       <h2 class="my-0 text-2xl">no really, post not found.</h2>
     </div>
+
+    <slot />
   </section>
 </template>
 
@@ -88,7 +90,7 @@ const post = await content(props.content);
   }
 
   blockquote ul li {
-    @apply text-center font-bold italic text-xl;
+    @apply text-center font-bold italic text-xl mt-2;
   }
 
   /* inline code */

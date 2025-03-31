@@ -8,7 +8,9 @@
 </script>
 
 <template>
-  <Post content="/missing" />
+  <Post content="/missing">
+    <BOFHQuote />
+  </Post>
 
   <p>
     Perhaps I could interest you in this random post?

@@ -9,7 +9,6 @@
 
 ### missing
 * shows some random or ai (also random) content
-* suggest other articles
 
 ### markdown-demo
 * add hero image to markdown demo

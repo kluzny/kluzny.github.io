@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { mouseEffects } from './helpers/mouse_effects.js';
 
-   mouseEffects();
+  mouseEffects();
 
   useSeoMeta({
     title: "kyle.luzny.dev",

@@ -16,6 +16,7 @@
 
 ## Post Ideas
 
+* add 'stress relief' to the stress test post by making the clickable bubble wrap
 * background glitch effects
 * tech stack
 * raspberry patch

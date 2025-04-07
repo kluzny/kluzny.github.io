@@ -124,7 +124,7 @@ header button {
   display: inline-block;
   height: 1rem;
   width: 1rem;
-  margin: 0.1rem;
+  margin: 2px; /* avoid some rounding issues in grid uniformity */
   scale: 1.0;
   background-color: red;
 }

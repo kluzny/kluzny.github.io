@@ -78,7 +78,7 @@ watch(halt, async (newValue, oldValue) => {
   <template v-else>
     <p>It works by adding DOM elements to the page until failure. The process starts off slowly, but ramps up in short order. There may still be time to navigate away.</p>
 
-    <header class="mt-4 flex flex-col justify-start items-start space-y-2">
+    <header class="flex flex-col justify-center items-center space-y-2 mt-4">
       <button v-if="halt"
               @click='halt = !halt'
               class="bg-green-500">
@@ -94,7 +94,7 @@ watch(halt, async (newValue, oldValue) => {
         Enable Hover Animations
       </label>
     </header>
-    <div class="flex justify-between items-center mt-4">
+    <div class="flex flex-col justify-center items-center xl:flex-row xl:justify-between xl:items-center mt-4">
       <p class='text-xl'>
         There are currently: <span>{{spawnedCount}}</span> elements.
       </p>

@@ -41,8 +41,8 @@ const title = titleTokens.map(token => token.charAt(0).toUpperCase() + token.sli
     Next Pit
   </NuxtLink>
 </nav>
-<footer>
-  <p class="text-xs">*1 is a placeholder, unless you can show me how to unhash a uuid.
+<footer class='mt-8'>
+  <p class="text-xs">*1 is a placeholder, unless you can show me how to unhash a
     <ExtLink href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions_3_and_5_(namespace_name-based)">
       uuid
     </ExtLink>

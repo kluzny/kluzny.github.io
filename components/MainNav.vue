@@ -57,21 +57,4 @@
     @apply text-stone-900 hover:text-stone-500;
     @apply dark:text-lime-500 dark:hover:text-lime-200;
    }
-
-  .blink {
-    animation: blink-animation 1s steps(5, start) infinite;
-    -webkit-animation: blink-animation 1s steps(5, start) infinite;
-  }
-
-  @keyframes blink-animation {
-    to {
-      visibility: hidden;
-    }
-  }
-
-  @-webkit-keyframes blink-animation {
-    to {
-      visibility: hidden;
-    }
-  }
 </style>

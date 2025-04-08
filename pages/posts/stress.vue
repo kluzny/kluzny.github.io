@@ -140,23 +140,4 @@ header button {
   scale: 1.25;
   border-radius: 50%;
 }
-
-.pulse {
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
 </style>

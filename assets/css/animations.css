@@ -1,0 +1,36 @@
+.blink {
+  --blink-duration: 1s;
+  animation: blink-animation var(--blink-duration) steps(5, start) infinite;
+  -webkit-animation: blink-animation var(--blink-duration) steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+.pulse {
+  --pulse-duration: 1s;
+  animation: pulse var(--pulse-duration) infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -15,3 +15,4 @@ Anything beneath this path `/tarpit` is a tarpit. It's an astronomically large l
 
 ### fun titles
 * ["Hard Union Share"](/tarpit/a645c05b-7b34-4d42-97c6-4c191fd669d6)
+* ["Duck Rush Rapidly Adult Would"](/tarpit/7cc40cbf-aa9b-4594-b223-65e58991ea00)

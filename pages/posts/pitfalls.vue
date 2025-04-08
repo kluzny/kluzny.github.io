@@ -19,6 +19,6 @@ let path = `/tarpit/${uuid}`
 @reference "../../assets/css/main.css";
 
 .post img {
-  @apply w-1/2 h-1/2;
+  @apply w-1/2 h-1/2 mx-auto xl:mx-0;
 }
 </style>

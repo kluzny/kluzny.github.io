@@ -99,7 +99,7 @@ for (let i = 0; i < paragraphCount; i++) {
   <NuxtLink :to='randomPit' class='link'>
     Random
   </NuxtLink>
-  <NuxtLink to="/" class='link'>
+  <NuxtLink to="/posts/pitfalls" class='link'>
     Exit
   </NuxtLink>
   <NuxtLink :to="path" class='link'>

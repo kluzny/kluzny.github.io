@@ -19,14 +19,16 @@
         kyle@localhost $ <span class="text-2xl blink">▮</span>
       </NuxtLink>
       <button @click="isExpanded = !isExpanded"
-              :class="vertical ? 'self-end' : ''">
+              :class="vertical ? 'self-end' : ''"
+              aria-label="Minimize Navigation">
         <Icon name="heroicons:bars-3-solid"
               class='text-3xl hover:text-stone-400 dark:hover:text-lime-200' />
       </button>
     </div>
     <button v-else
             @click="isExpanded = !isExpanded"
-            :class="vertical ? 'self-end' : ''">
+            :class="vertical ? 'self-end' : ''"
+            aria-label="Minimize Navigation">
       <Icon name="heroicons:bars-3-solid"
             class='text-3xl hover:text-stone-400 dark:hover:text-lime-200' />
     </button>

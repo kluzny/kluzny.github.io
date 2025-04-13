@@ -10,6 +10,7 @@
 </script>
 
 <template>
+  <Html lang="en" />
   <Body class="relative" /> <!-- relative for GradientOverlay -->
   <NuxtRouteAnnouncer />
   <MainNav vertical

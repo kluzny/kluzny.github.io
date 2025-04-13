@@ -36,9 +36,9 @@ then
 
 ```js
 // app.vue or any page really
-  import { mouseEffects } from './helpers/mouse_effects.js';
+import { mouseEffects } from './helpers/mouse_effects.js';
 
-  mouseEffects();
+mouseEffects();
 ```
 
 Notably I am using the rainbow color pallete from the `rainbowCursor` defaults and sharing it between both cursors.

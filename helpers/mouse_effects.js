@@ -1,4 +1,4 @@
-import { rainbowCursor, fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+import { rainbowCursor, fairyDustCursor } from "cursor-effects";
 
 const colors = [
   "#FE0000",

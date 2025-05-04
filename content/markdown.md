@@ -14,7 +14,7 @@ This post was written in markdown using [@nuxt/content 🌐](https://content.nux
 * markdown
 * styling
 
-## Nested Lists
+## Ordered Lists
 
 1. foo
 2. bar

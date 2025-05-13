@@ -1,4 +1,5 @@
 export default {
+  'Worsle': '/posts/worsle',
   'P.A.L.S.': '/posts/pals',
   'Pitfalls': '/posts/pitfalls',
   'Stress': '/posts/stress',

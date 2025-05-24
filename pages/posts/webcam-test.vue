@@ -74,7 +74,7 @@ function startTest() {
         </button>
         <h2 v-if='showCountdown' class="text-xl text-red-500">{{ countDown }}</h2>
  
-        <div class="w-1/3 mx-auto h-auto relative">
+        <div class="w-full mx-2 md:w-1/3 md:mx-auto h-auto relative">
             <template v-if="sendInTheClowns">
                 <p class="clown">🤡</p>
                 <audio src="/audio/clown.wav" autoplay></audio>

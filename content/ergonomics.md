@@ -107,6 +107,7 @@ Lets make a test helper. This will simulate what an authenticated user looks lik
 
 ```ruby
 # test/helpers/login_helper.rb
+
 module LoginHelper
   def login(user = nil)
     # create a user by default, or just use the one provided
@@ -138,16 +139,15 @@ Lets add mocha and our login helper to our `test_helper.rb`
 
 ```ruby
 # test/test_helper.rb
-# ...after require "rails/test_help
 
+# ...after require "rails/test_help
 require "mocha/minitest"
 require_relative "helpers/login_helper"
 # ...
 
 module ActiveSupport
   class TestCase
-  # ...
-
+    # ...
     include LoginHelper
   end
 end
@@ -162,7 +162,7 @@ require "application_system_test_case"
 
 class TasksTest < ApplicationSystemTestCase
   setup do
-    login
+    login # just works :tm:
     @task = create(:task)
 
     # alternatively, with a specific user instance

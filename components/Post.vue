@@ -44,6 +44,7 @@ const post = await content(props.content);
   }
 
   h1, h2, h3,
+  ul, ol,
   p, pre, blockquote {
     @apply mb-4;
   }

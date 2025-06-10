@@ -1,4 +1,5 @@
 export default {
+  'Ergonomics': '/posts/ergonomics',
   'Webcam Test': '/posts/webcam-test',
   'Landsat 8': '/posts/landsat',
   'P.A.L.S.': '/posts/pals',

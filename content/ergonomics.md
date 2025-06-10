@@ -44,7 +44,7 @@ Let's just run the test suite and see how it goes. At this point, after a dozen 
 
 ## The Realization
 
-There are no system test helpers. Your tests have to hit the login page like a real user back in 2010. I can already see it now, I'm going to push code, and CI is going to spin for 10 minutes hitting the login page over, and over, and over again while I browse Hacker News waiting to merge. This does not spark joy. Thankfully, Chris over at [gorails](//gorails.com) has a decent monkey patch to get the ball rolling. You can find out more in his [YouTube breakdown](https://www.youtube.com/watch?v=KFSpSJDHyu8). He even wrote the test helper to get bypass the `sign_in` for controller tests [https://github.com/rails/rails/issues/53207](https://github.com/rails/rails/issues/53207).
+There are no system test helpers. Your tests have to hit the login page like a real user back in 2010. I can already see it now, I'm going to push code, and CI is going to spin for 10 minutes hitting the login page over, and over, and over again while I browse Hacker News waiting to merge. This does not spark joy. Thankfully, Chris over at [gorails](//gorails.com) has a decent monkey patch to get the ball rolling. You can find out more in his [YouTube breakdown](https://www.youtube.com/watch?v=KFSpSJDHyu8). He even wrote the test helper to bypass the `sign_in` for controller tests [https://github.com/rails/rails/issues/53207](https://github.com/rails/rails/issues/53207).
 
 ## Non-viable
 

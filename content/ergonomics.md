@@ -62,7 +62,7 @@ Easy, 30min delivery or its free ( its always free actually ) thanks to the homi
 
 There is still the one rub, testing. Thankfully Clearance already ships with a middleware to make system testing functional, [BackDoor](https://github.com/thoughtbot/clearance/blob/main/lib/clearance/back_door.rb). This is a peice of middleware that you load in your `config/enviroments/test.rb` and looks for a magic `as: @user` parameter to bypass the authentication. This is a very reasonable solution, that fits well in the use case of Rack applications. The catch: every, single, authenticated path or url call needs to have a magic parameter on it.
 
-Where you would normally write `get users_path` no has to become `get users_path(as: @current_user)`. We are talking hundreds of test, that now have to be modified to stub out auth. This is painful. I'm comfortable with vim and sed, and I could do it sure. I might even be able to make Copilot do it for me. But am I really ok with, in perpetuity, modififying every, single, path, and url? Will I put this code down for a month and revisit it an even remember that's a thing? This is too much friction.
+Where you would normally write `get users_path` now has become `get users_path(as: @current_user)`. We are talking hundreds of test, that now have to be modified to stub out auth. This is painful. I'm comfortable with vim and sed, and I could do it sure. I might even be able to make Copilot do it for me. But am I really ok with, in perpetuity, modififying every, single, path, and url? Will I put this code down for a month and revisit it an even remember that's a thing? This is too much friction.
 
 ## Ergonomics
 

@@ -140,7 +140,7 @@ Lets add mocha and our login helper to our `test_helper.rb`
 ```ruby
 # test/test_helper.rb
 
-# ...after require "rails/test_help
+# ...after require "rails/test_help"
 require "mocha/minitest"
 require_relative "helpers/login_helper"
 # ...
@@ -158,6 +158,7 @@ Thats it, lets look at how our tests read.
 
 ```ruby
 # test/system/tasks_test.rb
+
 require "application_system_test_case"
 
 class TasksTest < ApplicationSystemTestCase

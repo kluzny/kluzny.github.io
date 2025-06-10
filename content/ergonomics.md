@@ -120,7 +120,7 @@ module LoginHelper
       .returns(nil)
 
     # you may need to stub additional methods in view/controller/application helpers
-    # this depending on the contents of your views, and which helpers you are using
+    # this depends on the contents of your views and which helpers you are using
     ApplicationController
       .any_instance
       .stubs(:signed_in?)

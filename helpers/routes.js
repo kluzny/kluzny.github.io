@@ -1,4 +1,5 @@
 export default {
+  'Reading List': '/posts/reading',
   'Ergonomics': '/posts/ergonomics',
   'Webcam Test': '/posts/webcam-test',
   'Landsat 8': '/posts/landsat',

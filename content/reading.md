@@ -22,6 +22,14 @@ I love me some Science Fiction. There is nothing quite like exploring humanity t
 
 ### Books
 
+### Novella
+
+#### Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson - 1886
+
+[PDF via archive.org](https://dn720002.ca.archive.org/0/items/books_202205/strange-case-of-dr-jekyll-and-mr-hyde.pdf) [wikipedia](https://en.wikipedia.org/wiki/Strange_Case_of_Dr_Jekyll_and_Mr_Hyde) [goodreads](https://www.goodreads.com/book/show/51496.Dr_Jekyll_and_Mr_Hyde)
+
+Allegedly, this story was written in under a week! Many would call this a gothic horror, but I cheekily sneak it under science fiction by virtue of the role of chemistry and life sciences in the grand transmogrification. I had to look up quite a few archaic words in this reading, but otherwise only took an afternoon. Still a timeless tale of the beasts that reside in all men and the nature of good and evil. While the story over time has been watered down so strongly that it can be portrayed by the likes of Bugs Bunny, I would say this is for an older teen to adult audience, as it features themes of murder, addiction, identity and sexuality.
+
 ### Short Fiction
 
 #### Harrison Bergeron - Kurt Vonnegut Jr. 1961

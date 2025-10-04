@@ -32,6 +32,12 @@ Allegedly, this story was written in under a week! Many would call this a gothic
 
 ### Short Fiction
 
+#### The Nine Billion Names of God - Arthur C. Clarke - 1953
+
+[PDF via winthrop.edu](https://faculty.winthrop.edu/kosterj/WRIT510/readings/The%20Nine%20Billion%20Names%20of%20God.pdf) [wikipedia](https://en.wikipedia.org/wiki/The_Nine_Billion_Names_of_God) [goodreads](https://www.goodreads.com/book/show/58544588.The_Nine_Billion_Names_of_God)
+
+Another masterpeice of fiction from Clarke. Too short a tale, clocking in at 4.5 pages. I love to see stories that include very early computing. I won't say more dare I spoil anything, but a must read should have 10 free minutes.
+
 #### Harrison Bergeron - Kurt Vonnegut Jr. 1961
 
 [PDF via archive.org](https://ia801400.us.archive.org/30/items/HarrisonBergeron/Harrison%20Bergeron.pdf) [wikipedia](https://en.wikipedia.org/wiki/Harrison_Bergeron) [goodreads](https://www.goodreads.com/en/book/show/10176119-harrison-bergeron)

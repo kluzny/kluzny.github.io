@@ -55,7 +55,7 @@
   @reference "../assets/css/main.css";
 
    nav .link {
-    @apply whitespace-nowrap no-underline;
+    @apply md:whitespace-nowrap no-underline;
     @apply text-stone-900 hover:text-stone-500;
     @apply dark:text-lime-500 dark:hover:text-lime-200;
    }

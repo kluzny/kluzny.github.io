@@ -9,6 +9,11 @@
   });
 
   const isExpanded = ref(!vertical);
+
+  const closeWhenVertical = () => {
+    if (!vertical) return;
+    isExpanded.value = !isExpanded.value;
+  };
 </script>
 
 <template>
@@ -40,7 +45,7 @@
         </NuxtLink>
       </li>
       <li v-for="(path, name) in routes" class="text-lg border-b-2 link">
-        <NuxtLink :to="path" class="block w-full">
+        <NuxtLink :to="path" class="block w-full" @click="closeWhenVertical">
           {{ name }}
         </NuxtLink>
       </li>

@@ -12,6 +12,19 @@ For better or worse, LeetCode style interviews are prevalant in today's hiring p
 
 While there are countless resources out there for solving and gaining intuition about Data Structures and Algorithms, this is meant to be a much simpler reference for common JavaScript tools you will use during these types of exercises. Hopefully you find this useful as a refresher, a cheatsheet, or even as prep material for an upcoming exam.
 
+## Table of Contents
+
+- [Arrays](#arrays)
+- [Strings](#strings)
+- [Objects](#objects)
+- [Sets](#sets)
+- [Maps](#maps)
+- [Math](#math)
+- [Numbers](#numbers)
+- [Promises](#promises)
+- [Fetch API](#fetch-api)
+- [TypeScript Types](#typescript-types)
+
 ## Arrays
 
 ### [Array.prototype.map() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)

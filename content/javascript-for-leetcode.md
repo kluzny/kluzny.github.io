@@ -14,16 +14,303 @@ While there are countless resources out there for solving and gaining intuition 
 
 ## Table of Contents
 
-- [Arrays](#arrays)
 - [Strings](#strings)
+- [Numbers](#numbers)
+- [Arrays](#arrays)
 - [Objects](#objects)
 - [Sets](#sets)
 - [Maps](#maps)
 - [Math](#math)
-- [Numbers](#numbers)
 - [Promises](#promises)
 - [Fetch API](#fetch-api)
 - [TypeScript Types](#typescript-types)
+
+## Strings
+
+### [String.prototype.split() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+
+Splits string into array.
+
+```ts
+const sentence = 'hello world';
+const words = sentence.split(' ');
+// ['hello', 'world']
+
+const chars = 'abc'.split('');
+// ['a', 'b', 'c']
+```
+
+### [String.prototype.substring() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+
+Extracts characters between two indices.
+
+```ts
+const str = 'hello';
+const sub = str.substring(1, 4);
+// "ell"
+```
+
+### [String.prototype.slice() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+
+Extracts a section of string (supports negative indices).
+
+```ts
+const str = 'hello';
+const end = str.slice(-2);
+// "lo"
+
+const middle = str.slice(1, 4);
+// "ell"
+```
+
+### [String.prototype.charAt() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+
+Returns character at index.
+
+```ts
+const str = 'hello';
+const char = str.charAt(1);
+// "e"
+```
+
+### [String.prototype.charCodeAt() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt)
+
+Returns Unicode value at index.
+
+```ts
+const str = 'abc';
+const code = str.charCodeAt(0);
+// 97
+```
+
+### [String.fromCharCode() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode)
+
+Creates string from Unicode values.
+
+```ts
+const str = String.fromCharCode(97, 98, 99);
+// "abc"
+```
+
+### [String.prototype.toLowerCase() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+
+Converts to lowercase.
+
+```ts
+const str = 'HELLO';
+const lower = str.toLowerCase();
+// "hello"
+```
+
+### [String.prototype.toUpperCase() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+
+Converts to uppercase.
+
+```ts
+const str = 'hello';
+const upper = str.toUpperCase();
+// "HELLO"
+```
+
+### [String.prototype.trim() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim)
+
+Removes whitespace from both ends.
+
+```ts
+const str = '  hello  ';
+const trimmed = str.trim();
+// "hello"
+```
+
+### [String.prototype.padStart() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+
+Pads string at the start.
+
+```ts
+const num = '5';
+const padded = num.padStart(3, '0');
+// "005"
+```
+
+### [String.prototype.padEnd() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd)
+
+Pads string at the end.
+
+```ts
+const num = '5';
+const padded = num.padEnd(3, '0');
+// "500"
+```
+
+### [String.prototype.repeat() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
+
+Repeats string n times.
+
+```ts
+const str = 'ab';
+const repeated = str.repeat(3);
+// "ababab"
+```
+
+### [String.prototype.replace() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+
+Replaces first match.
+
+```ts
+const str = 'hello world';
+const replaced = str.replace('world', 'there');
+// "hello there"
+```
+
+### [String.prototype.replaceAll() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
+
+Replaces all matches.
+
+```ts
+const str = 'foo bar foo';
+const replaced = str.replaceAll('foo', 'baz');
+// "baz bar baz"
+```
+
+### [String.prototype.startsWith() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
+
+Checks if string starts with substring.
+
+```ts
+const str = 'hello world';
+const starts = str.startsWith('hello');
+// true
+```
+
+### [String.prototype.endsWith() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
+
+Checks if string ends with substring.
+
+```ts
+const str = 'hello world';
+const ends = str.endsWith('world');
+// true
+```
+
+### [String.prototype.includes() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
+
+Checks if string contains substring.
+
+```ts
+const str = 'hello world';
+const has = str.includes('wo');
+// true
+```
+
+### [String.prototype.indexOf() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
+
+Returns index of first occurrence.
+
+```ts
+const str = 'hello';
+const index = str.indexOf('l');
+// 2
+```
+
+### [String.prototype.lastIndexOf() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf)
+
+Returns index of last occurrence.
+
+```ts
+const str = 'hello';
+const lastIndex = str.lastIndexOf('l');
+// 3
+```
+
+### [String.prototype.match() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+
+Matches against a regular expression.
+
+```ts
+const str = 'test123test456';
+const matches = str.match(/\d+/g);
+// ['123', '456']
+```
+## Numbers
+
+### [parseInt() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
+
+Parses string to integer.
+
+```ts
+const num = parseInt('42');
+// 42
+
+const hex = parseInt('ff', 16);
+// 255
+
+const partial = parseInt('42px');
+// 42
+```
+
+### [parseFloat() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
+
+Parses string to float.
+
+```ts
+const num = parseFloat('3.14');
+// 3.14
+
+const partial = parseFloat('3.14px');
+// 3.14
+```
+
+### [Number.isInteger() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger)
+
+Checks if value is an integer.
+
+```ts
+Number.isInteger(42);
+// true
+
+Number.isInteger(42.5);
+// false
+```
+
+### [Number.isNaN() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN)
+
+Checks if value is NaN.
+
+```ts
+Number.isNaN(NaN);
+// true
+
+Number.isNaN(42);
+// false
+```
+
+### [Number.prototype.toFixed() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
+
+Formats number to fixed decimal places.
+
+```ts
+const num = 3.14159;
+const fixed = num.toFixed(2);
+// "3.14"
+```
+
+### [Number.MAX_SAFE_INTEGER 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)
+
+Largest safe integer (2^53 - 1).
+
+```ts
+const max = Number.MAX_SAFE_INTEGER;
+// 9007199254740991
+```
+
+### [Number.MIN_SAFE_INTEGER 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_SAFE_INTEGER)
+
+Smallest safe integer (-(2^53 - 1)).
+
+```ts
+const min = Number.MIN_SAFE_INTEGER;
+// -9007199254740991
+```
 
 ## Arrays
 
@@ -354,214 +641,6 @@ const nums = [1, 5, 3];
 const max = Math.max(...nums);
 // 5
 ```
-
-## Strings
-
-### [String.prototype.split() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-
-Splits string into array.
-
-```ts
-const sentence = 'hello world';
-const words = sentence.split(' ');
-// ['hello', 'world']
-
-const chars = 'abc'.split('');
-// ['a', 'b', 'c']
-```
-
-### [String.prototype.substring() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-
-Extracts characters between two indices.
-
-```ts
-const str = 'hello';
-const sub = str.substring(1, 4);
-// "ell"
-```
-
-### [String.prototype.slice() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-
-Extracts a section of string (supports negative indices).
-
-```ts
-const str = 'hello';
-const end = str.slice(-2);
-// "lo"
-
-const middle = str.slice(1, 4);
-// "ell"
-```
-
-### [String.prototype.charAt() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-
-Returns character at index.
-
-```ts
-const str = 'hello';
-const char = str.charAt(1);
-// "e"
-```
-
-### [String.prototype.charCodeAt() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt)
-
-Returns Unicode value at index.
-
-```ts
-const str = 'abc';
-const code = str.charCodeAt(0);
-// 97
-```
-
-### [String.fromCharCode() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode)
-
-Creates string from Unicode values.
-
-```ts
-const str = String.fromCharCode(97, 98, 99);
-// "abc"
-```
-
-### [String.prototype.toLowerCase() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-
-Converts to lowercase.
-
-```ts
-const str = 'HELLO';
-const lower = str.toLowerCase();
-// "hello"
-```
-
-### [String.prototype.toUpperCase() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-
-Converts to uppercase.
-
-```ts
-const str = 'hello';
-const upper = str.toUpperCase();
-// "HELLO"
-```
-
-### [String.prototype.trim() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim)
-
-Removes whitespace from both ends.
-
-```ts
-const str = '  hello  ';
-const trimmed = str.trim();
-// "hello"
-```
-
-### [String.prototype.padStart() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
-
-Pads string at the start.
-
-```ts
-const num = '5';
-const padded = num.padStart(3, '0');
-// "005"
-```
-
-### [String.prototype.padEnd() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd)
-
-Pads string at the end.
-
-```ts
-const num = '5';
-const padded = num.padEnd(3, '0');
-// "500"
-```
-
-### [String.prototype.repeat() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
-
-Repeats string n times.
-
-```ts
-const str = 'ab';
-const repeated = str.repeat(3);
-// "ababab"
-```
-
-### [String.prototype.replace() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-
-Replaces first match.
-
-```ts
-const str = 'hello world';
-const replaced = str.replace('world', 'there');
-// "hello there"
-```
-
-### [String.prototype.replaceAll() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
-
-Replaces all matches.
-
-```ts
-const str = 'foo bar foo';
-const replaced = str.replaceAll('foo', 'baz');
-// "baz bar baz"
-```
-
-### [String.prototype.startsWith() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
-
-Checks if string starts with substring.
-
-```ts
-const str = 'hello world';
-const starts = str.startsWith('hello');
-// true
-```
-
-### [String.prototype.endsWith() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
-
-Checks if string ends with substring.
-
-```ts
-const str = 'hello world';
-const ends = str.endsWith('world');
-// true
-```
-
-### [String.prototype.includes() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
-
-Checks if string contains substring.
-
-```ts
-const str = 'hello world';
-const has = str.includes('wo');
-// true
-```
-
-### [String.prototype.indexOf() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
-
-Returns index of first occurrence.
-
-```ts
-const str = 'hello';
-const index = str.indexOf('l');
-// 2
-```
-
-### [String.prototype.lastIndexOf() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf)
-
-Returns index of last occurrence.
-
-```ts
-const str = 'hello';
-const lastIndex = str.lastIndexOf('l');
-// 3
-```
-
-### [String.prototype.match() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
-
-Matches against a regular expression.
-
-```ts
-const str = 'test123test456';
-const matches = str.match(/\d+/g);
-// ['123', '456']
-```
-
 ## Objects
 
 ### [Object.keys() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
@@ -677,7 +756,6 @@ const { x = 10, y = 20 } = {};
 const { a: alpha, b: beta } = obj;
 // alpha is 1, beta is 2
 ```
-
 ## Sets
 
 ### [new Set() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/Set)
@@ -907,7 +985,6 @@ map.forEach((value, key) => {
   console.log(`${key}: ${value}`);
 });
 ```
-
 ## Math
 
 ### [Math.max() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max)
@@ -1061,88 +1138,6 @@ const isEven = 4 % 2 === 0;
 // Cycle through indices
 const cyclicIndex = (index + 1) % array.length;
 ```
-
-## Numbers
-
-### [parseInt() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
-
-Parses string to integer.
-
-```ts
-const num = parseInt('42');
-// 42
-
-const hex = parseInt('ff', 16);
-// 255
-
-const partial = parseInt('42px');
-// 42
-```
-
-### [parseFloat() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
-
-Parses string to float.
-
-```ts
-const num = parseFloat('3.14');
-// 3.14
-
-const partial = parseFloat('3.14px');
-// 3.14
-```
-
-### [Number.isInteger() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger)
-
-Checks if value is an integer.
-
-```ts
-Number.isInteger(42);
-// true
-
-Number.isInteger(42.5);
-// false
-```
-
-### [Number.isNaN() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN)
-
-Checks if value is NaN.
-
-```ts
-Number.isNaN(NaN);
-// true
-
-Number.isNaN(42);
-// false
-```
-
-### [Number.prototype.toFixed() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
-
-Formats number to fixed decimal places.
-
-```ts
-const num = 3.14159;
-const fixed = num.toFixed(2);
-// "3.14"
-```
-
-### [Number.MAX_SAFE_INTEGER 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)
-
-Largest safe integer (2^53 - 1).
-
-```ts
-const max = Number.MAX_SAFE_INTEGER;
-// 9007199254740991
-```
-
-### [Number.MIN_SAFE_INTEGER 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_SAFE_INTEGER)
-
-Smallest safe integer (-(2^53 - 1)).
-
-```ts
-const min = Number.MIN_SAFE_INTEGER;
-// -9007199254740991
-```
-
 ## Promises
 
 ### [new Promise() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise)

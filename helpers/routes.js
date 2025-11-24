@@ -1,4 +1,5 @@
 export default {
+  'JavaScript for LeetCode': '/posts/javascript-for-leetcode',
   'Reading List': '/posts/reading',
   'Ergonomics': '/posts/ergonomics',
   'Webcam Test': '/posts/webcam-test',

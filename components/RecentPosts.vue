@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { format } from 'date-fns'
 import routes from '../helpers/routes.js'
+import { simpleDate } from '../helpers/formatting.js'
 
 const { data: posts } = await useAsyncData(() => {
   return queryCollection('content')
@@ -10,10 +10,6 @@ const { data: posts } = await useAsyncData(() => {
     .limit(5)
     .all()
 })
-
-function simpleDate(date) {
-  return format(date, 'yyyy-MM-dd')
-}
 
 function postPath(post) {
   return routes[post.title]

@@ -1,12 +1,14 @@
 <script setup>
+import { calcSpawn, updateHighScore } from '../../helpers/stress.js'
+
 const HIGH_SCORE = 'elementHighScore'
 
 let highScore = localStorage.getItem(HIGH_SCORE) || 0
 
 function setScore(score) {
-  if (score > highScore) {
+  highScore = updateHighScore(score, highScore)
+  if (highScore === score) {
     localStorage.setItem(HIGH_SCORE, score)
-    highScore = score
   }
 }
 
@@ -36,18 +38,14 @@ function startTest() {
   addElement()
 }
 
-let elementsToAdd = 1
 let elementTimer = 1000
-let digits
 
 function addElement() {
   if (halt.value) {
     return
   }
 
-  digits = Math.floor(Math.log10(spawnedCount.value))
-  elementsToAdd = 10 * digits + 1
-  spawnedCount.value = spawnedCount.value + elementsToAdd
+  spawnedCount.value = spawnedCount.value + calcSpawn(spawnedCount.value)
   elementTimer = Math.max(1, elementTimer * 0.9)
 
   setTimeout(() => {

@@ -1,5 +1,5 @@
 ### Utilities
-.PHONY: all help clean
+.PHONY: all help clean ready
 
 all: help
 
@@ -9,6 +9,7 @@ help:
 	@echo "Utilities:"
 	@echo "  help              Show this help message"
 	@echo "  clean             Cleanup nuxt caches"
+	@echo "  ready             Deployment pre-checks"
 	@echo ""
 	@echo "Quality:"
 	@echo "  lint              Run Prettier check + ESLint"
@@ -18,9 +19,16 @@ help:
 	@echo "  format            Auto-fix Prettier + ESLint"
 	@echo "  format-prettier   Auto-fix Prettier only"
 	@echo "  format-eslint     Auto-fix ESLint only"
+	@echo ""
+	@echo "Testing:"
+	@echo "  test              Run all tests (unit + E2E)"
+	@echo "  test-unit         Run unit and component tests (Vitest)"
+	@echo "  test-e2e          Run system tests (Playwright)"
 
 clean:
 	npx nuxi cleanup
+
+ready: format lint test
 
 ### Quality
 .PHONY: lint lint-eslint lint-prettier format format-prettier format-eslint
@@ -42,3 +50,15 @@ format-prettier:
 
 format-eslint:
 	npm run format:eslint
+
+### Testing
+.PHONY: test test-unit test-e2e
+
+test:
+	npm run test
+
+test-unit:
+	npm run test:unit
+
+test-e2e:
+	npm run test:e2e

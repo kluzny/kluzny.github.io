@@ -12,7 +12,7 @@ const lat = computed(() => ipInfo.loc.split(',')[0])
 const lon = computed(() => ipInfo.loc.split(',')[1])
 const landsatImage = computed(
   () =>
-    `https://api.nasa.gov/planetary/earth/imagery?lon=${lon.value}&lat=${lat.value}&dim=0.15&api_key=DEMO_KEY`,
+    `https://api.nasa.gov/planetary/earth/imagery?lon=${lon.value}&lat=${lat.value}&dim=0.15&api_key=DEMO_KEY`
 )
 
 try {

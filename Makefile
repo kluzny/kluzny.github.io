@@ -29,6 +29,11 @@ clean:
 	npx nuxi cleanup
 
 ready: format lint test
+	@if [ -n "$$(git status --porcelain)" ]; then \
+		echo "Error: working tree is dirty"; \
+		git status --short; \
+		exit 1; \
+	fi
 
 ### Quality
 .PHONY: lint lint-eslint lint-prettier format format-prettier format-eslint

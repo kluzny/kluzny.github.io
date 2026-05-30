@@ -1,9 +1,7 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-    <Post content="/ergonomics" />
+  <Post content="/ergonomics" />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

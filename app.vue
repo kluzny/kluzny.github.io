@@ -1,22 +1,22 @@
 <script setup lang="ts">
-  import { mouseEffects } from './helpers/mouse_effects.js';
+import { mouseEffects } from './helpers/mouse_effects.js'
 
-  mouseEffects();
+mouseEffects()
 
-  useSeoMeta({
-    title: "kyle.luzny.dev",
-    description: "A personal collection of technology musings",
-  });
+useSeoMeta({
+  title: 'kyle.luzny.dev',
+  description: 'A personal collection of technology musings',
+})
 </script>
 
 <template>
   <Html lang="en" />
-  <Body class="relative" /> <!-- relative for GradientOverlay -->
+  <Body class="relative" />
+  <!-- relative for GradientOverlay -->
   <NuxtRouteAnnouncer />
-  <MainNav vertical
-           class="xl:hidden"/>
+  <MainNav vertical class="xl:hidden" />
   <div class="min-h-screen flex justify-center items-start space-x-2 mx-auto w-full">
-    <MainNav class="hidden xl:flex"/>
+    <MainNav class="hidden xl:flex" />
     <div class="xl:mt-6 2xl:max-w-7xl rounded-sm p-4 w-full bg-white dark:bg-black">
       <NuxtPage />
     </div>

@@ -1,9 +1,7 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-    <Post content="/TODO" />
+  <Post content="/TODO" />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

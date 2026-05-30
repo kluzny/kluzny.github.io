@@ -1,7 +1,7 @@
 ---
 date: 2025-06-10
-title: "Ergonomics"
-description: "Elegant testing with Rails, Minitest, and Clearance"
+title: 'Ergonomics'
+description: 'Elegant testing with Rails, Minitest, and Clearance'
 ---
 
 # {{ $doc.title }}

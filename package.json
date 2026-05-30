@@ -8,8 +8,12 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint .",
-    "format": "eslint . --fix"
+    "lint": "npm run lint:prettier && npm run lint:eslint",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier . --check",
+    "format": "npm run format:prettier && npm run format:eslint",
+    "format:prettier": "prettier --write .",
+    "format:eslint": "eslint . --fix"
   },
   "dependencies": {
     "@nuxt/content": "^3.14.0",
@@ -39,6 +43,9 @@
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.2",
     "@iconify-json/material-symbols": "^1.2.19",
-    "baseline-browser-mapping": "^2.9.19"
+    "baseline-browser-mapping": "^2.9.19",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "prettier": "^3.8.3"
   }
 }

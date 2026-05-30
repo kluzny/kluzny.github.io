@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  import routes from '../helpers/routes.js';
+import routes from '../helpers/routes.js'
 
-  const nonMissingRoutes = Object.keys(routes).filter(route => route !== 'Missing Post?');
+const nonMissingRoutes = Object.keys(routes).filter((route) => route !== 'Missing Post?')
 
-  const randomRoute = nonMissingRoutes[Math.floor(Math.random() * nonMissingRoutes.length)];
-  const randomPath = routes[randomRoute];
+const randomRoute = nonMissingRoutes[Math.floor(Math.random() * nonMissingRoutes.length)]
+const randomPath = routes[randomRoute]
 </script>
 
 <template>
@@ -14,7 +14,7 @@
 
   <p>
     Perhaps I could interest you in this random post?
-    <NuxtLink :to="randomPath" class='link'>
+    <NuxtLink :to="randomPath" class="link">
       {{ randomRoute }}
     </NuxtLink>
   </p>

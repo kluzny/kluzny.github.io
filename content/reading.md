@@ -1,7 +1,7 @@
 ---
 date: 2025-09-21
-title: "Reading List"
-description: "A small collection of things I enjoyed reading, am reading, or otherwise want to read"
+title: 'Reading List'
+description: 'A small collection of things I enjoyed reading, am reading, or otherwise want to read'
 ---
 
 # {{ $doc.title }}

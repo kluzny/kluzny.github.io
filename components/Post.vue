@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { content } from '../helpers/content.js';
+import { content } from '../helpers/content.js'
 
-const props = defineProps(
-  {
-    content: {
-      type: String,
-      required: true,
-    },
+const props = defineProps({
+  content: {
+    type: String,
+    required: true,
   },
-)
+})
 
-const post = await content(props.content);
+const post = await content(props.content)
 </script>
 
 <template>
-  <section :class='{post: !!post, missing: !post}'>
+  <section :class="{ post: !!post, missing: !post }">
     <ContentRenderer v-if="post" :value="post" />
     <div v-else class="flex items-center missing">
-      <NuxtImg src="/tux_head_sad.png"
-              class="inline w-12 pr-2"
-              alt="emoji sized pixelated bust of tux the linux penguin, portrayed sadly with a single tear." />
+      <NuxtImg
+        src="/tux_head_sad.png"
+        class="inline w-12 pr-2"
+        alt="emoji sized pixelated bust of tux the linux penguin, portrayed sadly with a single tear."
+      />
       <h2 class="my-0 text-2xl">no really, post not found.</h2>
     </div>
 
@@ -39,13 +39,20 @@ const post = await content(props.content);
     @apply text-2xl;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     @apply font-bold;
   }
 
-  h1, h2, h3,
-  ul, ol,
-  p, pre, blockquote {
+  h1,
+  h2,
+  h3,
+  ul,
+  ol,
+  p,
+  pre,
+  blockquote {
     @apply mb-4;
   }
 
@@ -61,7 +68,8 @@ const post = await content(props.content);
     @apply no-underline;
   }
 
-  ul, ol {
+  ul,
+  ol {
     @apply list-inside pl-4;
   }
 

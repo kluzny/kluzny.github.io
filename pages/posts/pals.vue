@@ -1,5 +1,4 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <section>
@@ -36,6 +35,6 @@ section iframe {
   height: 90vh !important;
   z-index: 0;
 
-  @apply border-2 border-slate-200
+  @apply border-2 border-slate-200;
 }
 </style>

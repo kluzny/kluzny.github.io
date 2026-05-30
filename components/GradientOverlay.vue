@@ -1,6 +1,6 @@
 <template>
-  <div class="gridient"></div>
-  <div class="gridient glitch"></div>
+  <div class="gridient" />
+  <div class="gridient glitch" />
 </template>
 
 <style>
@@ -18,25 +18,31 @@
   height: 100%;
   overflow-y: hidden;
   background-color: transparent;
-  background-size: var(--gridient-size) var(--gridient-size), var(--gridient-size) var(--gridient-size);
-  background-position:  -1px -1px, -1px -1px;
-  background-image: linear-gradient(rgba(0,255,0,0.05) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(0,255,0,0.05) 1px, transparent 1px);
+  background-size:
+    var(--gridient-size) var(--gridient-size),
+    var(--gridient-size) var(--gridient-size);
+  background-position:
+    -1px -1px,
+    -1px -1px;
+  background-image:
+    linear-gradient(rgba(0, 255, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
   mix-blend-mode: difference;
 }
 
 .gridient.glitch {
-  clip-path: polygon(0 0, 100% 0, 100% .5em, 0 .5em);
-  background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  clip-path: polygon(0 0, 100% 0, 100% 0.5em, 0 0.5em);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   animation: glitch 7.5s linear infinite;
   animation-delay: 0s;
-  transform: translatex(.1rem);
+  transform: translatex(0.1rem);
 }
 
 @keyframes glitch {
- to {
-  clip-path: polygon(0 calc(100% - .5em), 100% calc(100% - .5em), 0 100%, 0 100%)
- }
+  to {
+    clip-path: polygon(0 calc(100% - 0.5em), 100% calc(100% - 0.5em), 0 100%, 0 100%);
+  }
 }
 </style>

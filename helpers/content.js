@@ -6,7 +6,7 @@ function addMetaFrom(post) {
 }
 
 async function fetchPost(path) {
-  return await useAsyncData(() => {
+  return await useAsyncData(`content-${path}`, () => {
     return queryCollection('content') // query the content collection
       .path(path) // drops the .md extension, and must begin with "/"
       .first()

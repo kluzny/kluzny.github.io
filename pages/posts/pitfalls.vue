@@ -4,18 +4,20 @@ const path = `/tarpit/${uuid}`
 </script>
 
 <template>
-  <Post content="/pit" />
+  <div>
+    <Post content="/pit" />
 
-  <section class="mt-8">
-    <div class="flex flex-col xl:flex-row justify-between items-center space-y-4 xl:space-y-0">
-      <h3 class="text-4xl font-bold text-red-500 blink">CAUTION!!!</h3>
-      <a :href="path" class="link text-2xl">
-        Enter the
-        {{ path }}
-      </a>
-      <h3 class="text-4xl font-bold text-red-500 blink">CAUTION!!!</h3>
-    </div>
-  </section>
+    <section class="mt-8">
+      <div class="flex flex-col xl:flex-row justify-between items-center space-y-4 xl:space-y-0">
+        <h3 class="text-4xl font-bold text-red-500 blink">CAUTION!!!</h3>
+        <a :href="path" class="link text-2xl">
+          Enter the
+          {{ path }}
+        </a>
+        <h3 class="text-4xl font-bold text-red-500 blink">CAUTION!!!</h3>
+      </div>
+    </section>
+  </div>
 </template>
 
 <style>

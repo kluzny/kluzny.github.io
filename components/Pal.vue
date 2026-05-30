@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+defineOptions({ name: 'PalIframe' })
+</script>
 
 <template>
   <iframe src="/pals/pals.html" />

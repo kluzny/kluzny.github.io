@@ -8,14 +8,16 @@ const randomPath = routes[randomRoute]
 </script>
 
 <template>
-  <Post content="/missing">
-    <BOFHQuote />
-  </Post>
+  <div>
+    <Post content="/missing">
+      <BOFHQuote />
+    </Post>
 
-  <p>
-    Perhaps I could interest you in this random post?
-    <NuxtLink :to="randomPath" class="link">
-      {{ randomRoute }}
-    </NuxtLink>
-  </p>
+    <p>
+      Perhaps I could interest you in this random post?
+      <NuxtLink :to="randomPath" class="link">
+        {{ randomRoute }}
+      </NuxtLink>
+    </p>
+  </div>
 </template>

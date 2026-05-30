@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { generate, count } from 'random-words'
+import { generate } from 'random-words'
 import { v5 as uuidv5 } from 'uuid'
 
 import seedrandom from 'seedrandom'
@@ -85,29 +85,31 @@ for (let i = 0; i < paragraphCount; i++) {
 </script>
 
 <template>
-  <h1 :data-id="id" class="post-title mb-4">{{ title }}</h1>
+  <div>
+    <h1 :data-id="id" class="post-title mb-4">{{ title }}</h1>
 
-  <div v-for="(paragraph, index) in paragraphs" class="post-paragraph mb-4">
-    <h2 class="post-heading">{{ headings[index] }}</h2>
-    <p>{{ paragraph }}</p>
+    <div v-for="(item, index) in paragraphs" :key="index" class="post-paragraph mb-4">
+      <h2 class="post-heading">{{ headings[index] }}</h2>
+      <p>{{ item }}</p>
+    </div>
+
+    <nav class="flex justify-center space-x-2 mt-4">
+      <NuxtLink :to="prevPath" class="link">
+        Previous Pit*<span class="text-xs align-top">1</span>
+      </NuxtLink>
+      <NuxtLink :to="randomPit" class="link"> Random </NuxtLink>
+      <NuxtLink to="/posts/pitfalls" class="link"> Exit </NuxtLink>
+      <NuxtLink :to="path" class="link"> Next Pit </NuxtLink>
+    </nav>
+    <footer class="mt-8 text-center">
+      <p class="text-xs">
+        *1 is a placeholder, unless you can show me how to unhash a
+        <ExtLink
+          href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions_3_and_5_(namespace_name-based)"
+        >
+          uuid
+        </ExtLink>
+      </p>
+    </footer>
   </div>
-
-  <nav class="flex justify-center space-x-2 mt-4">
-    <NuxtLink :to="prevPath" class="link">
-      Previous Pit*<span class="text-xs align-top">1</span>
-    </NuxtLink>
-    <NuxtLink :to="randomPit" class="link"> Random </NuxtLink>
-    <NuxtLink to="/posts/pitfalls" class="link"> Exit </NuxtLink>
-    <NuxtLink :to="path" class="link"> Next Pit </NuxtLink>
-  </nav>
-  <footer class="mt-8 text-center">
-    <p class="text-xs">
-      *1 is a placeholder, unless you can show me how to unhash a
-      <ExtLink
-        href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions_3_and_5_(namespace_name-based)"
-      >
-        uuid
-      </ExtLink>
-    </p>
-  </footer>
 </template>

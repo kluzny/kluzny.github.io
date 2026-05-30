@@ -19,7 +19,7 @@ function postPath(post) {
 <template>
   <h1 class="post-title">Recent Posts</h1>
   <ul class="mt-4">
-    <li v-for="post in posts">
+    <li v-for="post in posts" :key="post.path">
       <p class="inline">{{ simpleDate(post.date) }}</p>
       <NuxtLink :to="postPath(post)">
         {{ post.data }}

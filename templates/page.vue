@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+defineOptions({ name: 'PageTemplate' })
+</script>
 
 <template>
   <Post content="/TODO" />

@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { content } from '../helpers/content.js'
+import { content as fetchContent } from '../helpers/content.js'
+
+defineOptions({ name: 'PostContent' })
 
 const props = defineProps({
   content: {
@@ -8,7 +10,7 @@ const props = defineProps({
   },
 })
 
-const post = await content(props.content)
+const post = await fetchContent(props.content)
 </script>
 
 <template>

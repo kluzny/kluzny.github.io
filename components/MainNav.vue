@@ -54,7 +54,7 @@ const closeWhenVertical = () => {
           kyle@localhost $ <span class="text-2xl blink">▮</span>
         </NuxtLink>
       </li>
-      <li v-for="(path, name) in routes" class="text-lg border-b-2 link">
+      <li v-for="(path, name) in routes" :key="name" class="text-lg border-b-2 link">
         <NuxtLink :to="path" class="block w-full" @click="closeWhenVertical">
           {{ name }}
         </NuxtLink>

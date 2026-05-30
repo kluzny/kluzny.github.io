@@ -6,13 +6,15 @@ useSeoMeta({
 </script>
 
 <template>
-  <h1 class="post-title">Hello World!</h1>
+  <div>
+    <h1 class="post-title">Hello World!</h1>
 
-  <p>
-    This is a simple
-    <ExtLink href="https://vuejs.org"> Vue.js </ExtLink>
-    demo
-  </p>
+    <p>
+      This is a simple
+      <ExtLink href="https://vuejs.org"> Vue.js </ExtLink>
+      demo
+    </p>
 
-  <HelloWorld />
+    <HelloWorld />
+  </div>
 </template>

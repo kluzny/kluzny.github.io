@@ -8,4 +8,6 @@ await navigateTo('/posts/missing', {
 })
 </script>
 
-<template></template>
+<template>
+  <div />
+</template>

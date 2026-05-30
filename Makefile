@@ -1,5 +1,5 @@
 ### Utilities
-.PHONY: all help clean ready
+.PHONY: all help clean quality ready
 
 all: help
 
@@ -12,23 +12,27 @@ help:
 	@echo "  ready             Deployment pre-checks"
 	@echo ""
 	@echo "Quality:"
-	@echo "  lint              Run Prettier check + ESLint"
+	@echo "  quality           Run all quality checks"
+	@echo ""
+	@echo "  lint              Run all linters"
 	@echo "  lint-prettier     Run Prettier check only"
 	@echo "  lint-eslint       Run ESLint only"
 	@echo ""
-	@echo "  format            Auto-fix Prettier + ESLint"
+	@echo "  format            Run all formatters"
 	@echo "  format-prettier   Auto-fix Prettier only"
 	@echo "  format-eslint     Auto-fix ESLint only"
 	@echo ""
 	@echo "Testing:"
-	@echo "  test              Run all tests (unit + E2E)"
+	@echo "  test              Run all tests"
 	@echo "  test-unit         Run unit and component tests (Vitest)"
 	@echo "  test-e2e          Run system tests (Playwright)"
 
 clean:
 	npx nuxi cleanup
 
-ready: format lint test
+quality: format lint test
+
+ready: quality
 	@if [ -n "$$(git status --porcelain)" ]; then \
 		echo "Error: working tree is dirty"; \
 		git status --short; \

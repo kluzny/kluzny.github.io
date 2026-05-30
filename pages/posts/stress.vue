@@ -57,7 +57,7 @@ function addElement() {
 const isHoverEnabled = ref(true)
 const halt = ref(false)
 
-watch(halt, async (newValue, oldValue) => {
+watch(halt, async (newValue, _oldValue) => {
   if (!newValue) {
     addElement()
   }
@@ -65,47 +65,49 @@ watch(halt, async (newValue, oldValue) => {
 </script>
 
 <template>
-  <Post content="/stress" />
+  <div>
+    <Post content="/stress" />
 
-  <h2 v-if="!isTestStarted" class="pulse text-2xl font-bold text-center text-red-500">
-    Test will begin in <code>{{ countDown }}</code> seconds.
-  </h2>
+    <h2 v-if="!isTestStarted" class="pulse text-2xl font-bold text-center text-red-500">
+      Test will begin in <code>{{ countDown }}</code> seconds.
+    </h2>
 
-  <template v-else>
-    <p>
-      It works by adding DOM elements to the page until failure. The process starts off slowly, but
-      ramps up in short order. There may still be time to navigate away.
-    </p>
-
-    <header class="flex flex-col justify-center items-center space-y-2 mt-4">
-      <button v-if="halt" class="bg-green-500" @click="halt = !halt">Resume</button>
-      <button v-else class="bg-red-500" @click="halt = !halt">Pause</button>
-      <label>
-        <input v-model="isHoverEnabled" type="checkbox" />
-        Enable Hover Animations
-      </label>
-    </header>
-    <div
-      class="flex flex-col justify-center items-center xl:flex-row xl:justify-between xl:items-center mt-4"
-    >
-      <p class="text-xl">
-        There are currently: <span>{{ spawnedCount }}</span> elements.
+    <template v-else>
+      <p>
+        It works by adding DOM elements to the page until failure. The process starts off slowly,
+        but ramps up in short order. There may still be time to navigate away.
       </p>
-      <p
-        :class="
-          spawnedCount >= highScore
-            ? 'text-2xl text-lime-700 dark:text-yellow-300 pulse'
-            : 'text-xl text-slate-600'
-        "
+
+      <header class="flex flex-col justify-center items-center space-y-2 mt-4">
+        <button v-if="halt" class="bg-green-500" @click="halt = !halt">Resume</button>
+        <button v-else class="bg-red-500" @click="halt = !halt">Pause</button>
+        <label>
+          <input v-model="isHoverEnabled" type="checkbox" />
+          Enable Hover Animations
+        </label>
+      </header>
+      <div
+        class="flex flex-col justify-center items-center xl:flex-row xl:justify-between xl:items-center mt-4"
       >
-        High Score: {{ highScore }}
-      </p>
-    </div>
+        <p class="text-xl">
+          There are currently: <span>{{ spawnedCount }}</span> elements.
+        </p>
+        <p
+          :class="
+            spawnedCount >= highScore
+              ? 'text-2xl text-lime-700 dark:text-yellow-300 pulse'
+              : 'text-xl text-slate-600'
+          "
+        >
+          High Score: {{ highScore }}
+        </p>
+      </div>
 
-    <p class="elements mt-4" :class="isHoverEnabled ? 'hoverable' : ''">
-      <span v-for="i in spawnedCount" :key="i" :title="`${i} of ${spawnedCount}`" />
-    </p>
-  </template>
+      <p class="elements mt-4" :class="isHoverEnabled ? 'hoverable' : ''">
+        <span v-for="i in spawnedCount" :key="i" :title="`${i} of ${spawnedCount}`" />
+      </p>
+    </template>
+  </div>
 </template>
 
 <style>

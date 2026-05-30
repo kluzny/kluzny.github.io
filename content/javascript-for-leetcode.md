@@ -32,11 +32,11 @@ While there are countless resources out there for solving and gaining intuition 
 Splits string into array.
 
 ```ts
-const sentence = 'hello world';
-const words = sentence.split(' ');
+const sentence = 'hello world'
+const words = sentence.split(' ')
 // ['hello', 'world']
 
-const chars = 'abc'.split('');
+const chars = 'abc'.split('')
 // ['a', 'b', 'c']
 ```
 
@@ -45,8 +45,8 @@ const chars = 'abc'.split('');
 Extracts characters between two indices.
 
 ```ts
-const str = 'hello';
-const sub = str.substring(1, 4);
+const str = 'hello'
+const sub = str.substring(1, 4)
 // "ell"
 ```
 
@@ -55,11 +55,11 @@ const sub = str.substring(1, 4);
 Extracts a section of string (supports negative indices).
 
 ```ts
-const str = 'hello';
-const end = str.slice(-2);
+const str = 'hello'
+const end = str.slice(-2)
 // "lo"
 
-const middle = str.slice(1, 4);
+const middle = str.slice(1, 4)
 // "ell"
 ```
 
@@ -68,8 +68,8 @@ const middle = str.slice(1, 4);
 Returns character at index.
 
 ```ts
-const str = 'hello';
-const char = str.charAt(1);
+const str = 'hello'
+const char = str.charAt(1)
 // "e"
 ```
 
@@ -78,8 +78,8 @@ const char = str.charAt(1);
 Returns Unicode value at index.
 
 ```ts
-const str = 'abc';
-const code = str.charCodeAt(0);
+const str = 'abc'
+const code = str.charCodeAt(0)
 // 97
 ```
 
@@ -88,7 +88,7 @@ const code = str.charCodeAt(0);
 Creates string from Unicode values.
 
 ```ts
-const str = String.fromCharCode(97, 98, 99);
+const str = String.fromCharCode(97, 98, 99)
 // "abc"
 ```
 
@@ -97,8 +97,8 @@ const str = String.fromCharCode(97, 98, 99);
 Converts to lowercase.
 
 ```ts
-const str = 'HELLO';
-const lower = str.toLowerCase();
+const str = 'HELLO'
+const lower = str.toLowerCase()
 // "hello"
 ```
 
@@ -107,8 +107,8 @@ const lower = str.toLowerCase();
 Converts to uppercase.
 
 ```ts
-const str = 'hello';
-const upper = str.toUpperCase();
+const str = 'hello'
+const upper = str.toUpperCase()
 // "HELLO"
 ```
 
@@ -117,8 +117,8 @@ const upper = str.toUpperCase();
 Removes whitespace from both ends.
 
 ```ts
-const str = '  hello  ';
-const trimmed = str.trim();
+const str = '  hello  '
+const trimmed = str.trim()
 // "hello"
 ```
 
@@ -127,8 +127,8 @@ const trimmed = str.trim();
 Pads string at the start.
 
 ```ts
-const num = '5';
-const padded = num.padStart(3, '0');
+const num = '5'
+const padded = num.padStart(3, '0')
 // "005"
 ```
 
@@ -137,8 +137,8 @@ const padded = num.padStart(3, '0');
 Pads string at the end.
 
 ```ts
-const num = '5';
-const padded = num.padEnd(3, '0');
+const num = '5'
+const padded = num.padEnd(3, '0')
 // "500"
 ```
 
@@ -147,8 +147,8 @@ const padded = num.padEnd(3, '0');
 Repeats string n times.
 
 ```ts
-const str = 'ab';
-const repeated = str.repeat(3);
+const str = 'ab'
+const repeated = str.repeat(3)
 // "ababab"
 ```
 
@@ -157,8 +157,8 @@ const repeated = str.repeat(3);
 Replaces first match.
 
 ```ts
-const str = 'hello world';
-const replaced = str.replace('world', 'there');
+const str = 'hello world'
+const replaced = str.replace('world', 'there')
 // "hello there"
 ```
 
@@ -167,8 +167,8 @@ const replaced = str.replace('world', 'there');
 Replaces all matches.
 
 ```ts
-const str = 'foo bar foo';
-const replaced = str.replaceAll('foo', 'baz');
+const str = 'foo bar foo'
+const replaced = str.replaceAll('foo', 'baz')
 // "baz bar baz"
 ```
 
@@ -177,8 +177,8 @@ const replaced = str.replaceAll('foo', 'baz');
 Checks if string starts with substring.
 
 ```ts
-const str = 'hello world';
-const starts = str.startsWith('hello');
+const str = 'hello world'
+const starts = str.startsWith('hello')
 // true
 ```
 
@@ -187,8 +187,8 @@ const starts = str.startsWith('hello');
 Checks if string ends with substring.
 
 ```ts
-const str = 'hello world';
-const ends = str.endsWith('world');
+const str = 'hello world'
+const ends = str.endsWith('world')
 // true
 ```
 
@@ -197,8 +197,8 @@ const ends = str.endsWith('world');
 Checks if string contains substring.
 
 ```ts
-const str = 'hello world';
-const has = str.includes('wo');
+const str = 'hello world'
+const has = str.includes('wo')
 // true
 ```
 
@@ -207,8 +207,8 @@ const has = str.includes('wo');
 Returns index of first occurrence.
 
 ```ts
-const str = 'hello';
-const index = str.indexOf('l');
+const str = 'hello'
+const index = str.indexOf('l')
 // 2
 ```
 
@@ -217,8 +217,8 @@ const index = str.indexOf('l');
 Returns index of last occurrence.
 
 ```ts
-const str = 'hello';
-const lastIndex = str.lastIndexOf('l');
+const str = 'hello'
+const lastIndex = str.lastIndexOf('l')
 // 3
 ```
 
@@ -227,10 +227,11 @@ const lastIndex = str.lastIndexOf('l');
 Matches against a regular expression.
 
 ```ts
-const str = 'test123test456';
-const matches = str.match(/\d+/g);
+const str = 'test123test456'
+const matches = str.match(/\d+/g)
 // ['123', '456']
 ```
+
 ## Numbers
 
 ### [parseInt() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
@@ -238,13 +239,13 @@ const matches = str.match(/\d+/g);
 Parses string to integer.
 
 ```ts
-const num = parseInt('42');
+const num = parseInt('42')
 // 42
 
-const hex = parseInt('ff', 16);
+const hex = parseInt('ff', 16)
 // 255
 
-const partial = parseInt('42px');
+const partial = parseInt('42px')
 // 42
 ```
 
@@ -253,10 +254,10 @@ const partial = parseInt('42px');
 Parses string to float.
 
 ```ts
-const num = parseFloat('3.14');
+const num = parseFloat('3.14')
 // 3.14
 
-const partial = parseFloat('3.14px');
+const partial = parseFloat('3.14px')
 // 3.14
 ```
 
@@ -265,10 +266,10 @@ const partial = parseFloat('3.14px');
 Checks if value is an integer.
 
 ```ts
-Number.isInteger(42);
+Number.isInteger(42)
 // true
 
-Number.isInteger(42.5);
+Number.isInteger(42.5)
 // false
 ```
 
@@ -277,10 +278,10 @@ Number.isInteger(42.5);
 Checks if value is NaN.
 
 ```ts
-Number.isNaN(NaN);
+Number.isNaN(NaN)
 // true
 
-Number.isNaN(42);
+Number.isNaN(42)
 // false
 ```
 
@@ -289,8 +290,8 @@ Number.isNaN(42);
 Formats number to fixed decimal places.
 
 ```ts
-const num = 3.14159;
-const fixed = num.toFixed(2);
+const num = 3.14159
+const fixed = num.toFixed(2)
 // "3.14"
 ```
 
@@ -299,7 +300,7 @@ const fixed = num.toFixed(2);
 Largest safe integer (2^53 - 1).
 
 ```ts
-const max = Number.MAX_SAFE_INTEGER;
+const max = Number.MAX_SAFE_INTEGER
 // 9007199254740991
 ```
 
@@ -308,7 +309,7 @@ const max = Number.MAX_SAFE_INTEGER;
 Smallest safe integer (-(2^53 - 1)).
 
 ```ts
-const min = Number.MIN_SAFE_INTEGER;
+const min = Number.MIN_SAFE_INTEGER
 // -9007199254740991
 ```
 
@@ -319,8 +320,8 @@ const min = Number.MIN_SAFE_INTEGER;
 Transforms each element and returns a new array.
 
 ```ts
-const nums = [1, 2, 3];
-const doubled = nums.map(n => n * 2);
+const nums = [1, 2, 3]
+const doubled = nums.map((n) => n * 2)
 // [2, 4, 6]
 ```
 
@@ -329,8 +330,8 @@ const doubled = nums.map(n => n * 2);
 Creates a new array with elements that pass the test.
 
 ```ts
-const nums = [1, 2, 3, 4, 5];
-const evens = nums.filter(n => n % 2 === 0);
+const nums = [1, 2, 3, 4, 5]
+const evens = nums.filter((n) => n % 2 === 0)
 // [2, 4]
 ```
 
@@ -339,17 +340,20 @@ const evens = nums.filter(n => n % 2 === 0);
 Reduces array to a single value by applying a function.
 
 ```ts
-const nums = [1, 2, 3, 4];
-const sum = nums.reduce((acc, n) => acc + n, 0);
+const nums = [1, 2, 3, 4]
+const sum = nums.reduce((acc, n) => acc + n, 0)
 // 10
 
 // Group by property
-const items = [{ type: 'fruit', name: 'apple' }, { type: 'veg', name: 'carrot' }];
+const items = [
+  { type: 'fruit', name: 'apple' },
+  { type: 'veg', name: 'carrot' },
+]
 const grouped = items.reduce((acc, item) => {
-  acc[item.type] = acc[item.type] || [];
-  acc[item.type].push(item.name);
-  return acc;
-}, {});
+  acc[item.type] = acc[item.type] || []
+  acc[item.type].push(item.name)
+  return acc
+}, {})
 // { fruit: ['apple'], veg: ['carrot'] }
 ```
 
@@ -358,8 +362,8 @@ const grouped = items.reduce((acc, item) => {
 Executes a function for each element (no return value).
 
 ```ts
-const nums = [1, 2, 3];
-nums.forEach(n => console.log(n * 2));
+const nums = [1, 2, 3]
+nums.forEach((n) => console.log(n * 2))
 // Logs: 2, 4, 6
 ```
 
@@ -368,8 +372,8 @@ nums.forEach(n => console.log(n * 2));
 Returns the first element that satisfies the condition.
 
 ```ts
-const nums = [1, 2, 3, 4];
-const firstEven = nums.find(n => n % 2 === 0);
+const nums = [1, 2, 3, 4]
+const firstEven = nums.find((n) => n % 2 === 0)
 // 2
 ```
 
@@ -378,8 +382,8 @@ const firstEven = nums.find(n => n % 2 === 0);
 Returns the index of the first element that satisfies the condition.
 
 ```ts
-const nums = [1, 2, 3, 4];
-const index = nums.findIndex(n => n > 2);
+const nums = [1, 2, 3, 4]
+const index = nums.findIndex((n) => n > 2)
 // 2
 ```
 
@@ -388,8 +392,8 @@ const index = nums.findIndex(n => n > 2);
 Tests whether at least one element passes the test.
 
 ```ts
-const nums = [1, 2, 3];
-const hasEven = nums.some(n => n % 2 === 0);
+const nums = [1, 2, 3]
+const hasEven = nums.some((n) => n % 2 === 0)
 // true
 ```
 
@@ -398,8 +402,8 @@ const hasEven = nums.some(n => n % 2 === 0);
 Tests whether all elements pass the test.
 
 ```ts
-const nums = [2, 4, 6];
-const allEven = nums.every(n => n % 2 === 0);
+const nums = [2, 4, 6]
+const allEven = nums.every((n) => n % 2 === 0)
 // true
 ```
 
@@ -408,18 +412,18 @@ const allEven = nums.every(n => n % 2 === 0);
 Sorts array in place (mutates original).
 
 ```ts
-const nums = [3, 1, 4, 2];
-nums.sort((a, b) => a - b);
+const nums = [3, 1, 4, 2]
+nums.sort((a, b) => a - b)
 // [1, 2, 3, 4]
 
 // Sort strings
-const words = ['banana', 'apple', 'cherry'];
-words.sort();
+const words = ['banana', 'apple', 'cherry']
+words.sort()
 // ['apple', 'banana', 'cherry']
 
 // Sort objects
-const items = [{ age: 30 }, { age: 20 }, { age: 25 }];
-items.sort((a, b) => a.age - b.age);
+const items = [{ age: 30 }, { age: 20 }, { age: 25 }]
+items.sort((a, b) => a.age - b.age)
 // [{ age: 20 }, { age: 25 }, { age: 30 }]
 ```
 
@@ -428,8 +432,8 @@ items.sort((a, b) => a.age - b.age);
 Reverses array in place (mutates original).
 
 ```ts
-const nums = [1, 2, 3];
-nums.reverse();
+const nums = [1, 2, 3]
+nums.reverse()
 // [3, 2, 1]
 ```
 
@@ -438,11 +442,11 @@ nums.reverse();
 Returns a shallow copy of a portion of an array.
 
 ```ts
-const nums = [1, 2, 3, 4, 5];
-const middle = nums.slice(1, 4);
+const nums = [1, 2, 3, 4, 5]
+const middle = nums.slice(1, 4)
 // [2, 3, 4]
 
-const lastTwo = nums.slice(-2);
+const lastTwo = nums.slice(-2)
 // [4, 5]
 ```
 
@@ -451,12 +455,12 @@ const lastTwo = nums.slice(-2);
 Changes contents by removing or replacing elements (mutates original).
 
 ```ts
-const nums = [1, 2, 3, 4, 5];
-nums.splice(2, 1); // Remove 1 element at index 2
+const nums = [1, 2, 3, 4, 5]
+nums.splice(2, 1) // Remove 1 element at index 2
 // nums is now [1, 2, 4, 5]
 
-const letters = ['a', 'b', 'c'];
-letters.splice(1, 1, 'x', 'y'); // Replace 1 element with 2
+const letters = ['a', 'b', 'c']
+letters.splice(1, 1, 'x', 'y') // Replace 1 element with 2
 // letters is now ['a', 'x', 'y', 'c']
 ```
 
@@ -465,8 +469,8 @@ letters.splice(1, 1, 'x', 'y'); // Replace 1 element with 2
 Adds elements to the end (mutates original).
 
 ```ts
-const nums = [1, 2];
-nums.push(3, 4);
+const nums = [1, 2]
+nums.push(3, 4)
 // nums is now [1, 2, 3, 4]
 ```
 
@@ -475,8 +479,8 @@ nums.push(3, 4);
 Removes and returns the last element (mutates original).
 
 ```ts
-const nums = [1, 2, 3];
-const last = nums.pop();
+const nums = [1, 2, 3]
+const last = nums.pop()
 // last is 3, nums is now [1, 2]
 ```
 
@@ -485,8 +489,8 @@ const last = nums.pop();
 Removes and returns the first element (mutates original).
 
 ```ts
-const nums = [1, 2, 3];
-const first = nums.shift();
+const nums = [1, 2, 3]
+const first = nums.shift()
 // first is 1, nums is now [2, 3]
 ```
 
@@ -495,8 +499,8 @@ const first = nums.shift();
 Adds elements to the beginning (mutates original).
 
 ```ts
-const nums = [2, 3];
-nums.unshift(0, 1);
+const nums = [2, 3]
+nums.unshift(0, 1)
 // nums is now [0, 1, 2, 3]
 ```
 
@@ -505,9 +509,9 @@ nums.unshift(0, 1);
 Merges arrays into a new array.
 
 ```ts
-const arr1 = [1, 2];
-const arr2 = [3, 4];
-const merged = arr1.concat(arr2);
+const arr1 = [1, 2]
+const arr2 = [3, 4]
+const merged = arr1.concat(arr2)
 // [1, 2, 3, 4]
 ```
 
@@ -516,12 +520,12 @@ const merged = arr1.concat(arr2);
 Joins all elements into a string.
 
 ```ts
-const words = ['Hello', 'World'];
-const sentence = words.join(' ');
+const words = ['Hello', 'World']
+const sentence = words.join(' ')
 // "Hello World"
 
-const nums = [1, 2, 3];
-const csv = nums.join(',');
+const nums = [1, 2, 3]
+const csv = nums.join(',')
 // "1,2,3"
 ```
 
@@ -530,11 +534,11 @@ const csv = nums.join(',');
 Checks if array contains a value.
 
 ```ts
-const nums = [1, 2, 3];
-const hasTwo = nums.includes(2);
+const nums = [1, 2, 3]
+const hasTwo = nums.includes(2)
 // true
 
-const hasFive = nums.includes(5);
+const hasFive = nums.includes(5)
 // false
 ```
 
@@ -543,11 +547,11 @@ const hasFive = nums.includes(5);
 Returns the first index of a value, or -1 if not found.
 
 ```ts
-const nums = [1, 2, 3, 2];
-const index = nums.indexOf(2);
+const nums = [1, 2, 3, 2]
+const index = nums.indexOf(2)
 // 1
 
-const notFound = nums.indexOf(5);
+const notFound = nums.indexOf(5)
 // -1
 ```
 
@@ -556,8 +560,8 @@ const notFound = nums.indexOf(5);
 Returns the last index of a value, or -1 if not found.
 
 ```ts
-const nums = [1, 2, 3, 2];
-const lastIndex = nums.lastIndexOf(2);
+const nums = [1, 2, 3, 2]
+const lastIndex = nums.lastIndexOf(2)
 // 3
 ```
 
@@ -566,14 +570,14 @@ const lastIndex = nums.lastIndexOf(2);
 Flattens nested arrays.
 
 ```ts
-const nested = [1, [2, 3], [4, [5]]];
-const flat = nested.flat();
+const nested = [1, [2, 3], [4, [5]]]
+const flat = nested.flat()
 // [1, 2, 3, 4, [5]]
 
-const deepFlat = nested.flat(2);
+const deepFlat = nested.flat(2)
 // [1, 2, 3, 4, 5]
 
-const fullyFlat = nested.flat(Infinity);
+const fullyFlat = nested.flat(Infinity)
 // [1, 2, 3, 4, 5]
 ```
 
@@ -582,8 +586,8 @@ const fullyFlat = nested.flat(Infinity);
 Maps and flattens in one step.
 
 ```ts
-const words = ['hello world', 'foo bar'];
-const allWords = words.flatMap(s => s.split(' '));
+const words = ['hello world', 'foo bar']
+const allWords = words.flatMap((s) => s.split(' '))
 // ['hello', 'world', 'foo', 'bar']
 ```
 
@@ -593,19 +597,19 @@ Creates array from iterable or array-like object.
 
 ```ts
 // From string
-const chars = Array.from('abc');
+const chars = Array.from('abc')
 // ['a', 'b', 'c']
 
 // From Set
-const nums = Array.from(new Set([1, 2, 2, 3]));
+const nums = Array.from(new Set([1, 2, 2, 3]))
 // [1, 2, 3]
 
 // With mapping function
-const doubled = Array.from([1, 2, 3], x => x * 2);
+const doubled = Array.from([1, 2, 3], (x) => x * 2)
 // [2, 4, 6]
 
 // Create range
-const range = Array.from({ length: 5 }, (_, i) => i);
+const range = Array.from({ length: 5 }, (_, i) => i)
 // [0, 1, 2, 3, 4]
 ```
 
@@ -614,10 +618,10 @@ const range = Array.from({ length: 5 }, (_, i) => i);
 Checks if value is an array.
 
 ```ts
-Array.isArray([1, 2, 3]);
+Array.isArray([1, 2, 3])
 // true
 
-Array.isArray('string');
+Array.isArray('string')
 // false
 ```
 
@@ -626,21 +630,22 @@ Array.isArray('string');
 Expands array elements.
 
 ```ts
-const arr1 = [1, 2];
-const arr2 = [3, 4];
-const combined = [...arr1, ...arr2];
+const arr1 = [1, 2]
+const arr2 = [3, 4]
+const combined = [...arr1, ...arr2]
 // [1, 2, 3, 4]
 
 // Copy array
-const original = [1, 2, 3];
-const copy = [...original];
+const original = [1, 2, 3]
+const copy = [...original]
 // [1, 2, 3]
 
 // Use with Math
-const nums = [1, 5, 3];
-const max = Math.max(...nums);
+const nums = [1, 5, 3]
+const max = Math.max(...nums)
 // 5
 ```
+
 ## Objects
 
 ### [Object.keys() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
@@ -648,8 +653,8 @@ const max = Math.max(...nums);
 Returns array of object's keys.
 
 ```ts
-const obj = { a: 1, b: 2, c: 3 };
-const keys = Object.keys(obj);
+const obj = { a: 1, b: 2, c: 3 }
+const keys = Object.keys(obj)
 // ['a', 'b', 'c']
 ```
 
@@ -658,8 +663,8 @@ const keys = Object.keys(obj);
 Returns array of object's values.
 
 ```ts
-const obj = { a: 1, b: 2, c: 3 };
-const values = Object.values(obj);
+const obj = { a: 1, b: 2, c: 3 }
+const values = Object.values(obj)
 // [1, 2, 3]
 ```
 
@@ -668,13 +673,13 @@ const values = Object.values(obj);
 Returns array of [key, value] pairs.
 
 ```ts
-const obj = { a: 1, b: 2 };
-const entries = Object.entries(obj);
+const obj = { a: 1, b: 2 }
+const entries = Object.entries(obj)
 // [['a', 1], ['b', 2]]
 
 // Common pattern: iterate over object
 for (const [key, value] of Object.entries(obj)) {
-  console.log(`${key}: ${value}`);
+  console.log(`${key}: ${value}`)
 }
 ```
 
@@ -683,15 +688,16 @@ for (const [key, value] of Object.entries(obj)) {
 Creates object from entries.
 
 ```ts
-const entries = [['a', 1], ['b', 2]];
-const obj = Object.fromEntries(entries);
+const entries = [
+  ['a', 1],
+  ['b', 2],
+]
+const obj = Object.fromEntries(entries)
 // { a: 1, b: 2 }
 
 // Common pattern: transform object
-const original = { a: 1, b: 2 };
-const doubled = Object.fromEntries(
-  Object.entries(original).map(([k, v]) => [k, v * 2])
-);
+const original = { a: 1, b: 2 }
+const doubled = Object.fromEntries(Object.entries(original).map(([k, v]) => [k, v * 2]))
 // { a: 2, b: 4 }
 ```
 
@@ -700,14 +706,14 @@ const doubled = Object.fromEntries(
 Copies properties from source to target.
 
 ```ts
-const target = { a: 1 };
-const source = { b: 2, c: 3 };
-Object.assign(target, source);
+const target = { a: 1 }
+const source = { b: 2, c: 3 }
+Object.assign(target, source)
 // target is now { a: 1, b: 2, c: 3 }
 
 // Clone object (shallow)
-const original = { a: 1, b: 2 };
-const clone = Object.assign({}, original);
+const original = { a: 1, b: 2 }
+const clone = Object.assign({}, original)
 // { a: 1, b: 2 }
 ```
 
@@ -716,11 +722,11 @@ const clone = Object.assign({}, original);
 Checks if object has own property.
 
 ```ts
-const obj = { a: 1 };
-const has = Object.hasOwn(obj, 'a');
+const obj = { a: 1 }
+const has = Object.hasOwn(obj, 'a')
 // true
 
-const missing = Object.hasOwn(obj, 'b');
+const missing = Object.hasOwn(obj, 'b')
 // false
 ```
 
@@ -729,13 +735,13 @@ const missing = Object.hasOwn(obj, 'b');
 Copies object properties.
 
 ```ts
-const obj1 = { a: 1, b: 2 };
-const obj2 = { c: 3 };
-const merged = { ...obj1, ...obj2 };
+const obj1 = { a: 1, b: 2 }
+const obj2 = { c: 3 }
+const merged = { ...obj1, ...obj2 }
 // { a: 1, b: 2, c: 3 }
 
 // Override properties
-const updated = { ...obj1, b: 99 };
+const updated = { ...obj1, b: 99 }
 // { a: 1, b: 99 }
 ```
 
@@ -744,18 +750,19 @@ const updated = { ...obj1, b: 99 };
 Extracts object properties.
 
 ```ts
-const obj = { a: 1, b: 2, c: 3 };
-const { a, b } = obj;
+const obj = { a: 1, b: 2, c: 3 }
+const { a, b } = obj
 // a is 1, b is 2
 
 // With defaults
-const { x = 10, y = 20 } = {};
+const { x = 10, y = 20 } = {}
 // x is 10, y is 20
 
 // Rename
-const { a: alpha, b: beta } = obj;
+const { a: alpha, b: beta } = obj
 // alpha is 1, beta is 2
 ```
+
 ## Sets
 
 ### [new Set() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/Set)
@@ -763,12 +770,12 @@ const { a: alpha, b: beta } = obj;
 Creates a set of unique values.
 
 ```ts
-const set = new Set([1, 2, 2, 3]);
+const set = new Set([1, 2, 2, 3])
 // Set { 1, 2, 3 }
 
 // Remove duplicates from array
-const arr = [1, 2, 2, 3];
-const unique = [...new Set(arr)];
+const arr = [1, 2, 2, 3]
+const unique = [...new Set(arr)]
 // [1, 2, 3]
 ```
 
@@ -777,11 +784,11 @@ const unique = [...new Set(arr)];
 Adds value to set.
 
 ```ts
-const set = new Set([1, 2]);
-set.add(3);
+const set = new Set([1, 2])
+set.add(3)
 // Set { 1, 2, 3 }
 
-set.add(2); // No effect, already exists
+set.add(2) // No effect, already exists
 // Set { 1, 2, 3 }
 ```
 
@@ -790,11 +797,11 @@ set.add(2); // No effect, already exists
 Checks if set contains value.
 
 ```ts
-const set = new Set([1, 2, 3]);
-const hasTwo = set.has(2);
+const set = new Set([1, 2, 3])
+const hasTwo = set.has(2)
 // true
 
-const hasFive = set.has(5);
+const hasFive = set.has(5)
 // false
 ```
 
@@ -803,8 +810,8 @@ const hasFive = set.has(5);
 Removes value from set.
 
 ```ts
-const set = new Set([1, 2, 3]);
-set.delete(2);
+const set = new Set([1, 2, 3])
+set.delete(2)
 // Set { 1, 3 }
 ```
 
@@ -813,8 +820,8 @@ set.delete(2);
 Removes all values from set.
 
 ```ts
-const set = new Set([1, 2, 3]);
-set.clear();
+const set = new Set([1, 2, 3])
+set.clear()
 // Set {}
 ```
 
@@ -823,8 +830,8 @@ set.clear();
 Returns number of values in set.
 
 ```ts
-const set = new Set([1, 2, 3]);
-const size = set.size;
+const set = new Set([1, 2, 3])
+const size = set.size
 // 3
 ```
 
@@ -833,8 +840,8 @@ const size = set.size;
 Executes function for each value.
 
 ```ts
-const set = new Set([1, 2, 3]);
-set.forEach(value => console.log(value * 2));
+const set = new Set([1, 2, 3])
+set.forEach((value) => console.log(value * 2))
 // Logs: 2, 4, 6
 ```
 
@@ -843,16 +850,16 @@ set.forEach(value => console.log(value * 2));
 Iterate over set values.
 
 ```ts
-const set = new Set(['a', 'b', 'c']);
+const set = new Set(['a', 'b', 'c'])
 
 // for...of
 for (const value of set) {
-  console.log(value);
+  console.log(value)
 }
 // Logs: 'a', 'b', 'c'
 
 // Convert to array
-const arr = [...set];
+const arr = [...set]
 // ['a', 'b', 'c']
 ```
 
@@ -865,8 +872,8 @@ Creates a map of key-value pairs.
 ```ts
 const map = new Map([
   ['a', 1],
-  ['b', 2]
-]);
+  ['b', 2],
+])
 // Map { 'a' => 1, 'b' => 2 }
 ```
 
@@ -875,9 +882,9 @@ const map = new Map([
 Adds or updates key-value pair.
 
 ```ts
-const map = new Map();
-map.set('a', 1);
-map.set('b', 2);
+const map = new Map()
+map.set('a', 1)
+map.set('b', 2)
 // Map { 'a' => 1, 'b' => 2 }
 ```
 
@@ -886,11 +893,14 @@ map.set('b', 2);
 Gets value for key.
 
 ```ts
-const map = new Map([['a', 1], ['b', 2]]);
-const value = map.get('a');
+const map = new Map([
+  ['a', 1],
+  ['b', 2],
+])
+const value = map.get('a')
 // 1
 
-const missing = map.get('c');
+const missing = map.get('c')
 // undefined
 ```
 
@@ -899,11 +909,11 @@ const missing = map.get('c');
 Checks if map has key.
 
 ```ts
-const map = new Map([['a', 1]]);
-const hasA = map.has('a');
+const map = new Map([['a', 1]])
+const hasA = map.has('a')
 // true
 
-const hasB = map.has('b');
+const hasB = map.has('b')
 // false
 ```
 
@@ -912,8 +922,11 @@ const hasB = map.has('b');
 Removes key-value pair.
 
 ```ts
-const map = new Map([['a', 1], ['b', 2]]);
-map.delete('a');
+const map = new Map([
+  ['a', 1],
+  ['b', 2],
+])
+map.delete('a')
 // Map { 'b' => 2 }
 ```
 
@@ -922,8 +935,11 @@ map.delete('a');
 Removes all key-value pairs.
 
 ```ts
-const map = new Map([['a', 1], ['b', 2]]);
-map.clear();
+const map = new Map([
+  ['a', 1],
+  ['b', 2],
+])
+map.clear()
 // Map {}
 ```
 
@@ -932,8 +948,11 @@ map.clear();
 Returns number of key-value pairs.
 
 ```ts
-const map = new Map([['a', 1], ['b', 2]]);
-const size = map.size;
+const map = new Map([
+  ['a', 1],
+  ['b', 2],
+])
+const size = map.size
 // 2
 ```
 
@@ -942,8 +961,11 @@ const size = map.size;
 Returns iterator of keys.
 
 ```ts
-const map = new Map([['a', 1], ['b', 2]]);
-const keys = [...map.keys()];
+const map = new Map([
+  ['a', 1],
+  ['b', 2],
+])
+const keys = [...map.keys()]
 // ['a', 'b']
 ```
 
@@ -952,8 +974,11 @@ const keys = [...map.keys()];
 Returns iterator of values.
 
 ```ts
-const map = new Map([['a', 1], ['b', 2]]);
-const values = [...map.values()];
+const map = new Map([
+  ['a', 1],
+  ['b', 2],
+])
+const values = [...map.values()]
 // [1, 2]
 ```
 
@@ -962,8 +987,11 @@ const values = [...map.values()];
 Returns iterator of [key, value] pairs.
 
 ```ts
-const map = new Map([['a', 1], ['b', 2]]);
-const entries = [...map.entries()];
+const map = new Map([
+  ['a', 1],
+  ['b', 2],
+])
+const entries = [...map.entries()]
 // [['a', 1], ['b', 2]]
 ```
 
@@ -972,19 +1000,23 @@ const entries = [...map.entries()];
 Iterate over map entries.
 
 ```ts
-const map = new Map([['a', 1], ['b', 2]]);
+const map = new Map([
+  ['a', 1],
+  ['b', 2],
+])
 
 // for...of
 for (const [key, value] of map) {
-  console.log(`${key}: ${value}`);
+  console.log(`${key}: ${value}`)
 }
 // Logs: 'a: 1', 'b: 2'
 
 // forEach
 map.forEach((value, key) => {
-  console.log(`${key}: ${value}`);
-});
+  console.log(`${key}: ${value}`)
+})
 ```
+
 ## Math
 
 ### [Math.max() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max)
@@ -992,12 +1024,12 @@ map.forEach((value, key) => {
 Returns largest of numbers.
 
 ```ts
-const max = Math.max(1, 5, 3);
+const max = Math.max(1, 5, 3)
 // 5
 
 // With array (use spread)
-const nums = [1, 5, 3];
-const maxNum = Math.max(...nums);
+const nums = [1, 5, 3]
+const maxNum = Math.max(...nums)
 // 5
 ```
 
@@ -1006,12 +1038,12 @@ const maxNum = Math.max(...nums);
 Returns smallest of numbers.
 
 ```ts
-const min = Math.min(1, 5, 3);
+const min = Math.min(1, 5, 3)
 // 1
 
 // With array (use spread)
-const nums = [1, 5, 3];
-const minNum = Math.min(...nums);
+const nums = [1, 5, 3]
+const minNum = Math.min(...nums)
 // 1
 ```
 
@@ -1020,7 +1052,7 @@ const minNum = Math.min(...nums);
 Returns absolute value.
 
 ```ts
-const abs = Math.abs(-5);
+const abs = Math.abs(-5)
 // 5
 ```
 
@@ -1029,10 +1061,10 @@ const abs = Math.abs(-5);
 Rounds down to nearest integer.
 
 ```ts
-const floored = Math.floor(4.7);
+const floored = Math.floor(4.7)
 // 4
 
-const negative = Math.floor(-4.3);
+const negative = Math.floor(-4.3)
 // -5
 ```
 
@@ -1041,10 +1073,10 @@ const negative = Math.floor(-4.3);
 Rounds up to nearest integer.
 
 ```ts
-const ceiled = Math.ceil(4.3);
+const ceiled = Math.ceil(4.3)
 // 5
 
-const negative = Math.ceil(-4.7);
+const negative = Math.ceil(-4.7)
 // -4
 ```
 
@@ -1053,10 +1085,10 @@ const negative = Math.ceil(-4.7);
 Rounds to nearest integer.
 
 ```ts
-const rounded = Math.round(4.5);
+const rounded = Math.round(4.5)
 // 5
 
-const down = Math.round(4.4);
+const down = Math.round(4.4)
 // 4
 ```
 
@@ -1065,11 +1097,11 @@ const down = Math.round(4.4);
 Returns base to exponent power.
 
 ```ts
-const power = Math.pow(2, 3);
+const power = Math.pow(2, 3)
 // 8
 
 // Alternative: exponentiation operator
-const same = 2 ** 3;
+const same = 2 ** 3
 // 8
 ```
 
@@ -1078,7 +1110,7 @@ const same = 2 ** 3;
 Returns square root.
 
 ```ts
-const sqrt = Math.sqrt(16);
+const sqrt = Math.sqrt(16)
 // 4
 ```
 
@@ -1087,17 +1119,17 @@ const sqrt = Math.sqrt(16);
 Returns random number between 0 (inclusive) and 1 (exclusive).
 
 ```ts
-const rand = Math.random();
+const rand = Math.random()
 // e.g., 0.7234
 
 // Random integer between 0 and max (exclusive)
-const randomInt = Math.floor(Math.random() * 10);
+const randomInt = Math.floor(Math.random() * 10)
 // e.g., 7 (between 0-9)
 
 // Random integer between min and max (inclusive)
-const min = 5;
-const max = 10;
-const randRange = Math.floor(Math.random() * (max - min + 1)) + min;
+const min = 5
+const max = 10
+const randRange = Math.floor(Math.random() * (max - min + 1)) + min
 // e.g., 7 (between 5-10)
 ```
 
@@ -1106,9 +1138,9 @@ const randRange = Math.floor(Math.random() * (max - min + 1)) + min;
 Returns sign of number (-1, 0, or 1).
 
 ```ts
-Math.sign(5);    // 1
-Math.sign(-5);   // -1
-Math.sign(0);    // 0
+Math.sign(5) // 1
+Math.sign(-5) // -1
+Math.sign(0) // 0
 ```
 
 ### [Math.trunc() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc)
@@ -1116,10 +1148,10 @@ Math.sign(0);    // 0
 Returns integer part by removing decimals.
 
 ```ts
-const truncated = Math.trunc(4.7);
+const truncated = Math.trunc(4.7)
 // 4
 
-const negative = Math.trunc(-4.7);
+const negative = Math.trunc(-4.7)
 // -4
 ```
 
@@ -1128,16 +1160,17 @@ const negative = Math.trunc(-4.7);
 Returns remainder of division.
 
 ```ts
-const remainder = 7 % 3;
+const remainder = 7 % 3
 // 1
 
 // Check even/odd
-const isEven = 4 % 2 === 0;
+const isEven = 4 % 2 === 0
 // true
 
 // Cycle through indices
-const cyclicIndex = (index + 1) % array.length;
+const cyclicIndex = (index + 1) % array.length
 ```
+
 ## Promises
 
 ### [new Promise() 🌐](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise)
@@ -1147,11 +1180,11 @@ Creates a new promise.
 ```ts
 const promise = new Promise<number>((resolve, reject) => {
   setTimeout(() => {
-    resolve(42);
-  }, 1000);
-});
+    resolve(42)
+  }, 1000)
+})
 
-promise.then(value => console.log(value));
+promise.then((value) => console.log(value))
 // After 1 second, logs: 42
 ```
 
@@ -1160,12 +1193,12 @@ promise.then(value => console.log(value));
 Handles promise resolution.
 
 ```ts
-const promise = Promise.resolve(5);
+const promise = Promise.resolve(5)
 
 promise
-  .then(x => x * 2)
-  .then(x => x + 1)
-  .then(result => console.log(result));
+  .then((x) => x * 2)
+  .then((x) => x + 1)
+  .then((result) => console.log(result))
 // Logs: 11
 ```
 
@@ -1174,11 +1207,9 @@ promise
 Handles promise rejection.
 
 ```ts
-const promise = Promise.reject(new Error('Failed'));
+const promise = Promise.reject(new Error('Failed'))
 
-promise
-  .then(value => console.log(value))
-  .catch(error => console.error(error.message));
+promise.then((value) => console.log(value)).catch((error) => console.error(error.message))
 // Logs: "Failed"
 ```
 
@@ -1187,12 +1218,12 @@ promise
 Runs regardless of promise outcome.
 
 ```ts
-const promise = fetch('/api/data');
+const promise = fetch('/api/data')
 
 promise
-  .then(response => response.json())
-  .catch(error => console.error(error))
-  .finally(() => console.log('Done'));
+  .then((response) => response.json())
+  .catch((error) => console.error(error))
+  .finally(() => console.log('Done'))
 // Always logs: "Done"
 ```
 
@@ -1201,26 +1232,18 @@ promise
 Waits for all promises to resolve.
 
 ```ts
-const promises = [
-  Promise.resolve(1),
-  Promise.resolve(2),
-  Promise.resolve(3)
-];
+const promises = [Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)]
 
-const results = await Promise.all(promises);
+const results = await Promise.all(promises)
 // [1, 2, 3]
 
 // If any reject, entire Promise.all rejects
-const mixed = [
-  Promise.resolve(1),
-  Promise.reject(new Error('Failed')),
-  Promise.resolve(3)
-];
+const mixed = [Promise.resolve(1), Promise.reject(new Error('Failed')), Promise.resolve(3)]
 
 try {
-  await Promise.all(mixed);
+  await Promise.all(mixed)
 } catch (error) {
-  console.error(error.message);
+  console.error(error.message)
   // Logs: "Failed"
 }
 ```
@@ -1230,13 +1253,9 @@ try {
 Waits for all promises to settle (resolve or reject).
 
 ```ts
-const promises = [
-  Promise.resolve(1),
-  Promise.reject(new Error('Failed')),
-  Promise.resolve(3)
-];
+const promises = [Promise.resolve(1), Promise.reject(new Error('Failed')), Promise.resolve(3)]
 
-const results = await Promise.allSettled(promises);
+const results = await Promise.allSettled(promises)
 // [
 //   { status: 'fulfilled', value: 1 },
 //   { status: 'rejected', reason: Error: Failed },
@@ -1249,10 +1268,10 @@ const results = await Promise.allSettled(promises);
 Returns first promise to settle.
 
 ```ts
-const slow = new Promise(resolve => setTimeout(() => resolve('slow'), 1000));
-const fast = new Promise(resolve => setTimeout(() => resolve('fast'), 100));
+const slow = new Promise((resolve) => setTimeout(() => resolve('slow'), 1000))
+const fast = new Promise((resolve) => setTimeout(() => resolve('fast'), 100))
 
-const result = await Promise.race([slow, fast]);
+const result = await Promise.race([slow, fast])
 // "fast"
 ```
 
@@ -1264,10 +1283,10 @@ Returns first promise to fulfill.
 const promises = [
   Promise.reject(new Error('Error 1')),
   Promise.resolve('Success'),
-  Promise.reject(new Error('Error 2'))
-];
+  Promise.reject(new Error('Error 2')),
+]
 
-const result = await Promise.any(promises);
+const result = await Promise.any(promises)
 // "Success"
 ```
 
@@ -1278,17 +1297,17 @@ Syntactic sugar for promises.
 ```ts
 async function fetchUser(id: number) {
   try {
-    const response = await fetch(`/api/users/${id}`);
-    const user = await response.json();
-    return user;
+    const response = await fetch(`/api/users/${id}`)
+    const user = await response.json()
+    return user
   } catch (error) {
-    console.error('Failed to fetch user:', error);
-    throw error;
+    console.error('Failed to fetch user:', error)
+    throw error
   }
 }
 
 // Use it
-const user = await fetchUser(123);
+const user = await fetchUser(123)
 ```
 
 ## Fetch API
@@ -1299,13 +1318,13 @@ Makes HTTP requests.
 
 ```ts
 // GET request
-const response = await fetch('https://api.example.com/data');
-const data = await response.json();
+const response = await fetch('https://api.example.com/data')
+const data = await response.json()
 // { id: 1, name: 'Example' }
 
 // Check status
 if (!response.ok) {
-  throw new Error(`HTTP error! status: ${response.status}`);
+  throw new Error(`HTTP error! status: ${response.status}`)
 }
 ```
 
@@ -1321,11 +1340,11 @@ const response = await fetch('https://api.example.com/users', {
   },
   body: JSON.stringify({
     name: 'John',
-    email: 'john@example.com'
-  })
-});
+    email: 'john@example.com',
+  }),
+})
 
-const created = await response.json();
+const created = await response.json()
 // { id: 42, name: 'John', email: 'john@example.com' }
 ```
 
@@ -1334,22 +1353,22 @@ const created = await response.json();
 Parse response body.
 
 ```ts
-const response = await fetch('/api/data');
+const response = await fetch('/api/data')
 
 // JSON
-const jsonData = await response.json();
+const jsonData = await response.json()
 
 // Text
-const textData = await response.text();
+const textData = await response.text()
 
 // Blob (files, images)
-const blobData = await response.blob();
+const blobData = await response.blob()
 
 // FormData
-const formData = await response.formData();
+const formData = await response.formData()
 
 // ArrayBuffer (binary data)
-const buffer = await response.arrayBuffer();
+const buffer = await response.arrayBuffer()
 ```
 
 ### [Request Headers 🌐](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
@@ -1360,11 +1379,11 @@ Set custom headers.
 const response = await fetch('https://api.example.com/protected', {
   method: 'GET',
   headers: {
-    'Authorization': 'Bearer token123',
-    'Accept': 'application/json',
-    'X-Custom-Header': 'value'
-  }
-});
+    Authorization: 'Bearer token123',
+    Accept: 'application/json',
+    'X-Custom-Header': 'value',
+  },
+})
 ```
 
 ### [Abort Requests 🌐](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
@@ -1372,20 +1391,20 @@ const response = await fetch('https://api.example.com/protected', {
 Cancel ongoing requests.
 
 ```ts
-const controller = new AbortController();
-const signal = controller.signal;
+const controller = new AbortController()
+const signal = controller.signal
 
 // Start request
-const promise = fetch('https://api.example.com/slow', { signal });
+const promise = fetch('https://api.example.com/slow', { signal })
 
 // Cancel after 5 seconds
-setTimeout(() => controller.abort(), 5000);
+setTimeout(() => controller.abort(), 5000)
 
 try {
-  const response = await promise;
+  const response = await promise
 } catch (error) {
   if (error.name === 'AbortError') {
-    console.log('Request was cancelled');
+    console.log('Request was cancelled')
   }
 }
 ```
@@ -1397,24 +1416,24 @@ Handle network and HTTP errors.
 ```ts
 async function fetchWithError(url: string) {
   try {
-    const response = await fetch(url);
+    const response = await fetch(url)
 
     // fetch only rejects on network errors
     // Check HTTP status manually
     if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`)
     }
 
-    return await response.json();
+    return await response.json()
   } catch (error) {
     if (error instanceof TypeError) {
       // Network error
-      console.error('Network error:', error);
+      console.error('Network error:', error)
     } else {
       // HTTP error or other
-      console.error('Error:', error);
+      console.error('Error:', error)
     }
-    throw error;
+    throw error
   }
 }
 ```
@@ -1426,14 +1445,14 @@ async function fetchWithError(url: string) {
 Define array types.
 
 ```ts
-const nums: number[] = [1, 2, 3];
-const strs: Array<string> = ['a', 'b', 'c'];
+const nums: number[] = [1, 2, 3]
+const strs: Array<string> = ['a', 'b', 'c']
 
 // Tuple (fixed length and types)
-const tuple: [string, number] = ['age', 25];
+const tuple: [string, number] = ['age', 25]
 
 // Read-only array
-const readOnly: readonly number[] = [1, 2, 3];
+const readOnly: readonly number[] = [1, 2, 3]
 // readOnly.push(4); // Error
 ```
 
@@ -1443,23 +1462,23 @@ Define object shapes.
 
 ```ts
 interface User {
-  id: number;
-  name: string;
-  email?: string; // Optional
-  readonly created: Date; // Read-only
+  id: number
+  name: string
+  email?: string // Optional
+  readonly created: Date // Read-only
 }
 
 const user: User = {
   id: 1,
   name: 'John',
-  created: new Date()
-};
+  created: new Date(),
+}
 
 // Type alias
 type Point = {
-  x: number;
-  y: number;
-};
+  x: number
+  y: number
+}
 ```
 
 ### [Union Types 🌐](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types)
@@ -1467,19 +1486,19 @@ type Point = {
 Value can be one of several types.
 
 ```ts
-type Status = 'pending' | 'approved' | 'rejected';
+type Status = 'pending' | 'approved' | 'rejected'
 
 function setStatus(status: Status) {
   // ...
 }
 
-setStatus('pending'); // OK
+setStatus('pending') // OK
 // setStatus('invalid'); // Error
 
 // Union of different types
-type Result = number | string;
-const value: Result = 42;
-const text: Result = 'hello';
+type Result = number | string
+const value: Result = 42
+const text: Result = 'hello'
 ```
 
 ### [Type Guards 🌐](https://www.typescriptlang.org/docs/handbook/2/narrowing.html)
@@ -1489,15 +1508,15 @@ Narrow types at runtime.
 ```ts
 function process(value: string | number) {
   if (typeof value === 'string') {
-    return value.toUpperCase();
+    return value.toUpperCase()
   } else {
-    return value * 2;
+    return value * 2
   }
 }
 
 // Array type guard
 if (Array.isArray(value)) {
-  value.map(x => x * 2);
+  value.map((x) => x * 2)
 }
 ```
 
@@ -1507,18 +1526,17 @@ Create reusable type-safe components.
 
 ```ts
 function identity<T>(arg: T): T {
-  return arg;
+  return arg
 }
 
-const num = identity<number>(42);
-const str = identity<string>('hello');
+const num = identity<number>(42)
+const str = identity<string>('hello')
 
 // Generic interface
 interface Box<T> {
-  value: T;
+  value: T
 }
 
-const numBox: Box<number> = { value: 42 };
-const strBox: Box<string> = { value: 'hello' };
+const numBox: Box<number> = { value: 42 }
+const strBox: Box<string> = { value: 'hello' }
 ```
-

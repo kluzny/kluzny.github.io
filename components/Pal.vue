@@ -1,4 +1,5 @@
 <script setup>
+defineOptions({ name: 'PalIframe' })
 </script>
 
 <template>
@@ -6,9 +7,9 @@
 </template>
 
 <style scoped>
-  iframe {
-    width: 100%;
-    height: 100vh;
-    border: none;
-  }
+iframe {
+  width: 100%;
+  height: 100vh;
+  border: none;
+}
 </style>

@@ -10,6 +10,6 @@ export default defineContentConfig({
         description: z.string(),
         date: z.date(),
       }),
-    })
-  }
+    }),
+  },
 })

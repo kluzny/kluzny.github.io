@@ -1,9 +1,7 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-    <Post content="/javascript-for-leetcode" />
+  <Post content="/javascript-for-leetcode" />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

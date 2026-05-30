@@ -10,18 +10,18 @@ This post was written in markdown using [@nuxt/content 🌐](https://content.nux
 
 ## Use Cases
 
-* testing
-* markdown
-* styling
+- testing
+- markdown
+- styling
 
 ## Ordered Lists
 
 1. foo
 2. bar
 3. baz
-    1. qux
-    1. quux
-    1. quuux
+   1. qux
+   1. quux
+   1. quuux
 
 ## Lorem Ipsum
 
@@ -34,17 +34,20 @@ Thanks [lorem ipsum generator 🌐](https://loremipsum.io)
 Inline code looks like `this` or maybe `self` if that's your thing.
 
 ### code
+
 ```
 print("hello print enjoyers")
 ```
 
 ### shell theme
+
 ```shell
 echo "hello linux enjoyers!"
 :(){ :|:& };: # shell stress test
 ```
 
 ### ruby theme (multiline)
+
 ```ruby
 who = "ruby enjoyers"
 => "ruby enjoyers"
@@ -61,4 +64,5 @@ puts SecureRandom.random_number * Math::PI
 ## Quotes
 
 > If debugging is the process of removing bugs, then programming must be the process of putting them in.
+>
 > - Edsger W. Dijkstra

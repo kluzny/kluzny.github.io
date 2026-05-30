@@ -16,19 +16,19 @@ but this is just a [web version](https://docs.godotengine.org/en/stable/tutorial
 
 ## Features
 
-* Unix time support
-* Moods
-* Scoring
-* Survival Mechanics
-* Tossable
-* Vaporwave Holodeck Menu
-* Bonk!
+- Unix time support
+- Moods
+- Scoring
+- Survival Mechanics
+- Tossable
+- Vaporwave Holodeck Menu
+- Bonk!
 
 ## Desktop Version
 
 I hope to have a desktop version available soon, along with the source code and assets. For technical reasons, not all functionality is avialable via the browser `:(`
 
-* Transparent window to see your desktop
-* Mouse Passthrough to interact with your desktop and maintain focus.
+- Transparent window to see your desktop
+- Mouse Passthrough to interact with your desktop and maintain focus.
 
 ## State of the P.A.L.S.

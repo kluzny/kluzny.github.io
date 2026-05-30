@@ -1,9 +1,7 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-    <Post content="/reading" />
+  <Post content="/reading" />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

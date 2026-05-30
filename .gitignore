@@ -17,8 +17,12 @@ logs
 .DS_Store
 .fleet
 .idea
+.claude
 
 # Local env files
 .env
 .env.*
 !.env.example
+
+# Test output
+test-results

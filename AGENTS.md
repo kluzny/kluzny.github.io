@@ -9,13 +9,18 @@ npm run dev        # Start dev server at http://localhost:3000
 npm run generate   # Build static site (output: .output/public)
 npm run preview    # Preview production build locally
 
-npm run lint       # Prettier check + ESLint
-npm run format     # Auto-fix Prettier + ESLint
+make lint          # Prettier check + ESLint
+make format        # Auto-fix Prettier + ESLint
+
+make test          # Run all tests
+make test-unit     # Run unit and component tests (Vitest)
+make test-e2e      # Run system tests (Playwright)
+
+make quality       # format + lint + test
+make ready         # quality + assert clean git working tree
 
 make clean         # Remove build artifacts
 ```
-
-All npm commands have `make` equivalents.
 
 ## Stack
 
@@ -36,7 +41,20 @@ All npm commands have `make` equivalents.
 
 **Helpers**: `helpers/content.js` contains utilities for querying the content collection; `helpers/routes.js` defines route metadata; `helpers/mouse_effects.js` drives interactive cursor effects.
 
-**No test suite** — there are no configured tests in this project.
+**Tests**: Vitest for unit/component tests (`tests/unit/`), Playwright for E2E tests (`tests/e2e/`).
+
+## DOs and DON'Ts
+
+**DO:**
+
+- Run narrow individual tests during iteration (`make test-unit -- --reporter=verbose <file>`)
+- Follow red-green-refactor: write a failing test first, make it pass, then clean up
+- Use concise single-line commit messages
+
+**DON'T:**
+
+- Silence lint warnings without explicit user permission
+- Commit without explicit user permission
 
 ## Code Style
 

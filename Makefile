@@ -1,10 +1,14 @@
 ### Utilities
-.PHONY: all help clean quality ready
+.PHONY: all help clean ready
 
 all: help
 
 help:
 	@echo "Usage: make [target]"
+	@echo ""
+	@echo "Dependencies:"
+	@echo "  install           Install dependencies (npm ci)"
+	@echo "  audit             Report outdated npm packages"
 	@echo ""
 	@echo "Utilities:"
 	@echo "  help              Show this help message"
@@ -30,8 +34,6 @@ help:
 clean:
 	npx nuxi cleanup
 
-quality: format lint test
-
 ready: quality
 	@if [ -n "$$(git status --porcelain)" ]; then \
 		echo "Error: working tree is dirty"; \
@@ -39,8 +41,19 @@ ready: quality
 		exit 1; \
 	fi
 
+### Dependencies
+.PHONY: install audit
+
+install:
+	npm ci
+
+audit:
+	npm outdated
+
 ### Quality
-.PHONY: lint lint-eslint lint-prettier format format-prettier format-eslint
+.PHONY: quality lint lint-eslint lint-prettier format format-prettier format-eslint
+
+quality: format lint test
 
 lint:
 	npm run lint

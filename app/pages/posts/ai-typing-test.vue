@@ -140,6 +140,12 @@ function clearScores() {
   localStorage.removeItem(HIGH_SCORES_KEY)
 }
 
+function registerTab() {
+  tabs.value++
+  tabTimes.value.push(elapsed.value)
+  sound.play()
+}
+
 function onKeydown(event) {
   const isPlaying = phase.value === 'playing'
   if (event.key !== 'Tab' || !(isPlaying || isCoolingDown.value)) {
@@ -147,9 +153,7 @@ function onKeydown(event) {
   }
   event.preventDefault()
   if (isPlaying && !event.repeat) {
-    tabs.value++
-    tabTimes.value.push(elapsed.value)
-    sound.play()
+    registerTab()
   }
 }
 
@@ -262,6 +266,19 @@ onBeforeUnmount(() => {
           <p v-if="phase === 'playing'" class="text-center font-bold pulse">
             HIT <kbd>TAB</kbd> HIT <kbd>TAB</kbd> HIT <kbd>TAB</kbd>
           </p>
+
+          <button
+            v-if="phase === 'playing'"
+            type="button"
+            class="tab-key mx-auto"
+            aria-label="Tab"
+            data-testid="tab-button"
+            @click="registerTab"
+          >
+            <span aria-hidden="true">⇤</span>
+            <span class="tab-key-label">Tab</span>
+            <span aria-hidden="true">⇥</span>
+          </button>
         </template>
 
         <div v-if="phase === 'done'" class="text-center space-y-2" data-testid="results">
@@ -310,6 +327,43 @@ onBeforeUnmount(() => {
 </template>
 
 <style>
+.tab-key {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 10rem;
+  padding: 1rem 1.25rem;
+  font-family: ui-monospace, monospace;
+  font-size: 1.5rem;
+  line-height: 1;
+  border: 2px solid currentColor;
+  border-radius: 0.5rem;
+  background: rgba(128, 128, 128, 0.15);
+  /* inset bevel plus a hard bottom edge makes it read as a raised keycap */
+  box-shadow:
+    inset 0 0 0 3px rgba(128, 128, 128, 0.35),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.25),
+    0 4px 0 currentColor;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tab-key:active {
+  transform: translateY(4px);
+  box-shadow:
+    inset 0 0 0 3px rgba(128, 128, 128, 0.35),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25),
+    0 0 0 currentColor;
+}
+
+.tab-key-label {
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .tab-cursor-wrap {
   position: relative;
   display: inline-block;

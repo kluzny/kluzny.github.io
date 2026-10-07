@@ -47,6 +47,27 @@ test('tab autocompletes text and updates TPS', async ({ page }) => {
   await expect(page.getByTestId('autocomplete')).toContainText('no cap, this load-bearing')
 })
 
+test('the on-screen Tab button advances the prompt, centred below the board', async ({ page }) => {
+  await expect(page.getByTestId('tab-button')).toHaveCount(0)
+  await page.getByRole('button', { name: /Begin/ }).click()
+  await page.clock.runFor(5000)
+
+  const button = page.getByTestId('tab-button')
+  for (let i = 0; i < 3; i++) {
+    await button.click()
+  }
+  await expect(page.getByTestId('tabs')).toHaveText('3')
+  await expect(page.getByTestId('autocomplete')).toContainText('no cap, this')
+
+  const box = async (id: string) => (await page.getByTestId(id).boundingBox())!
+  const [key, board] = [await box('tab-button'), await box('autocomplete')]
+  expect(key.y).toBeGreaterThan(board.y + board.height)
+  expect(Math.abs(key.x + key.width / 2 - (board.x + board.width / 2))).toBeLessThan(2)
+
+  await page.clock.runFor(15000)
+  await expect(page.getByTestId('tab-button')).toHaveCount(0)
+})
+
 test('tab does nothing before the round starts', async ({ page }) => {
   await page.getByRole('button', { name: /Begin/ }).click()
   await page.keyboard.press('Tab')

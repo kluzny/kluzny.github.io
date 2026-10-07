@@ -22,7 +22,7 @@
   "dependencies": {
     "@nuxt/content": "^3.14.0",
     "@nuxt/eslint": "^1.2.0",
-    "@nuxt/fonts": "^0.11.0",
+    "@nuxt/fonts": "^0.14.0",
     "@nuxt/icon": "^1.11.0",
     "@nuxt/image": "^2.1.0",
     "@nuxt/kit": "^4.6.0",
@@ -57,8 +57,9 @@
     "vitest": "^5.0.3"
   },
   "allowScripts": {
-    "better-sqlite3@12.10.0": true,
     "esbuild@0.28.2": true,
-    "esbuild@0.25.12": true
+    "better-sqlite3@12.11.1": true,
+    "esbuild@0.27.7": true,
+    "unrs-resolver": false
   }
 }

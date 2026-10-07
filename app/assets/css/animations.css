@@ -51,3 +51,40 @@
     transform: scale(1);
   }
 }
+
+.shake {
+  animation: shake var(--shake-duration, 0.15s) linear infinite;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(calc(var(--shake-px, 3px) * -1));
+  }
+
+  75% {
+    transform: translateX(var(--shake-px, 3px));
+  }
+}
+
+.speed-line {
+  animation: speed 0.3s linear infinite;
+}
+
+@keyframes speed {
+  to {
+    transform: translateX(calc(var(--speed-distance, 20px) * -1));
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shake,
+  .speed-line {
+    animation: none;
+  }
+}

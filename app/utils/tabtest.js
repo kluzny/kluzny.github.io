@@ -79,7 +79,7 @@ export function revealText(phrases = PHRASES, tabs) {
 }
 
 export function addHighScore(scores, tps, tabs, now = new Date()) {
-  const entry = { tps, tabs, date: now.toISOString() }
+  const entry = { tps, tabs, usd: calcUsd(tabs), date: now.toISOString() }
   // Array.prototype.sort is stable, so ties keep the earlier score first
   return [...scores, entry].sort((a, b) => b.tps - a.tps).slice(0, MAX_HIGH_SCORES)
 }
@@ -91,4 +91,58 @@ export function verdictFor(tps) {
   if (tps < 6) return 'the agent cooked and so did you. emergent tabbing detected.'
   if (tps < 8) return 'certified 10x tabber. the swarm bows to you.'
   return 'AGI achieved. you ARE the orchestrator. touch grass (after one more round).'
+}
+
+// tabs per second over the trailing window; times are seconds into the round
+export function recentRate(times, now, windowSeconds = 1) {
+  return times.filter((t) => now - t < windowSeconds).length / windowSeconds
+}
+
+export const GLOW_MAX_TPS = 6
+
+export function glowLevel(rate, maxRate = GLOW_MAX_TPS) {
+  return Math.round(Math.min(1, Math.max(0, rate / maxRate)) * 100) / 100
+}
+
+// stacked box-shadow glow (white-hot core, coloured middle, wide outer halo),
+// every layer grows and the hue slides from lime to red-orange as the level rises
+export function glowShadow(level) {
+  if (level <= 0) {
+    return 'none'
+  }
+  const px = (n) => Math.round(n * 10) / 10
+  const hue = Math.round(90 - 80 * level)
+  return [
+    `0 0 ${px(2 + 10 * level)}px ${px(level * 3)}px hsl(${hue}, 100%, 92%)`,
+    `0 0 ${px(6 + 26 * level)}px ${px(1 + 10 * level)}px hsl(${hue}, 100%, 60%)`,
+    `0 0 ${px(12 + 52 * level)}px ${px(2 + 22 * level)}px hsl(${Math.max(0, hue - 25)}, 100%, 50%)`,
+  ].join(', ')
+}
+
+// px of screen shake: still below 1.5 tps (level .25), ramping up to a violent 7px
+export function shakeAmplitude(level) {
+  if (level < 0.25) {
+    return 0
+  }
+  return Math.round((1 + 8 * (level - 0.25)) * 10) / 10
+}
+
+export function speedLineCount(level) {
+  if (level < 0.25) return 0
+  if (level < 0.5) return 2
+  if (level < 0.75) return 3
+  return 4
+}
+
+export const SETTLE_MS = 3500
+
+// 1 -> 0 ease-out multiplier that lets the shake wind down after the round ends
+export function settleFactor(msSinceEnd) {
+  const t = Math.min(1, Math.max(0, msSinceEnd / SETTLE_MS))
+  return Math.round((1 - t) ** 2 * 100) / 100
+}
+
+// the context window gets pricier with every tab, so the bill compounds
+export function calcUsd(tabs) {
+  return Math.round((0.02 * tabs + 0.001 * tabs * tabs) * 100) / 100
 }

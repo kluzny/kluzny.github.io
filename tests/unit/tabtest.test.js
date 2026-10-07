@@ -7,6 +7,14 @@ import {
   addHighScore,
   verdictFor,
   shuffle,
+  recentRate,
+  glowLevel,
+  glowShadow,
+  shakeAmplitude,
+  speedLineCount,
+  settleFactor,
+  SETTLE_MS,
+  calcUsd,
 } from '../../app/utils/tabtest.js'
 
 describe('calcTps', () => {
@@ -87,8 +95,12 @@ describe('addHighScore', () => {
 
   it('adds a score to an empty list', () => {
     expect(addHighScore([], 3, 45, now)).toEqual([
-      { tps: 3, tabs: 45, date: '2026-10-06T12:00:00.000Z' },
+      { tps: 3, tabs: 45, usd: calcUsd(45), date: '2026-10-06T12:00:00.000Z' },
     ])
+  })
+
+  it('records what the round cost in USD', () => {
+    expect(addHighScore([], 6, 90, now)[0].usd).toBe(calcUsd(90))
   })
 
   it('sorts descending by tps', () => {
@@ -128,5 +140,128 @@ describe('verdictFor', () => {
 
   it('praises fast tabbers more than slow ones', () => {
     expect(verdictFor(9)).not.toBe(verdictFor(1))
+  })
+})
+
+describe('recentRate', () => {
+  it('counts only tabs inside the window', () => {
+    expect(recentRate([0.1, 1.2, 1.5, 1.9], 2, 1)).toBe(3)
+  })
+
+  it('is zero when nothing was tabbed recently', () => {
+    expect(recentRate([0.1], 5, 1)).toBe(0)
+  })
+
+  it('scales to tabs per second for other window sizes', () => {
+    expect(recentRate([1, 1.5], 2, 2)).toBe(1)
+  })
+})
+
+describe('glowLevel', () => {
+  it('is zero at rest', () => {
+    expect(glowLevel(0)).toBe(0)
+  })
+
+  it('is mild at a casual 1.0 tps', () => {
+    expect(glowLevel(1)).toBeGreaterThan(0)
+    expect(glowLevel(1)).toBeLessThan(0.25)
+  })
+
+  it('maxes out at an absolute mash of 6 tps and above', () => {
+    expect(glowLevel(6)).toBe(1)
+    expect(glowLevel(12)).toBe(1)
+  })
+})
+
+describe('glowShadow', () => {
+  const blurs = (shadow) => [...shadow.matchAll(/0 0 ([\d.]+)px/g)].map((m) => Number(m[1]))
+
+  it('is none at level zero', () => {
+    expect(glowShadow(0)).toBe('none')
+  })
+
+  it('stacks three layers: core, middle, outer', () => {
+    expect(blurs(glowShadow(0.5))).toHaveLength(3)
+  })
+
+  it('grows every layer as the level rises', () => {
+    const low = blurs(glowShadow(0.2))
+    const high = blurs(glowShadow(1))
+    high.forEach((blur, i) => expect(blur).toBeGreaterThan(low[i]))
+  })
+
+  it('gets hotter in colour as the level rises', () => {
+    expect(glowShadow(0.2)).not.toBe(glowShadow(1))
+    expect(glowShadow(1)).toMatch(/hsl\(/)
+  })
+})
+
+describe('shakeAmplitude', () => {
+  it('stays still below 1.5 tps', () => {
+    expect(shakeAmplitude(0)).toBe(0)
+    expect(shakeAmplitude(glowLevel(1.4))).toBe(0)
+  })
+
+  it('starts shaking at 1.5 tps and gets violent at the top', () => {
+    expect(shakeAmplitude(glowLevel(1.5))).toBeGreaterThan(0)
+    expect(shakeAmplitude(1)).toBeGreaterThan(shakeAmplitude(glowLevel(1.5)))
+    expect(shakeAmplitude(1)).toBeLessThanOrEqual(8)
+  })
+})
+
+describe('speedLineCount', () => {
+  it('has no lines below 1.5 tps', () => {
+    expect(speedLineCount(glowLevel(1))).toBe(0)
+    expect(speedLineCount(glowLevel(1.4))).toBe(0)
+  })
+
+  it('starts at 1.5 tps and adds more lines as the level rises, up to four', () => {
+    expect(speedLineCount(glowLevel(1.5))).toBe(2)
+    expect(speedLineCount(0.4)).toBe(2)
+    expect(speedLineCount(0.7)).toBe(3)
+    expect(speedLineCount(1)).toBe(4)
+  })
+})
+
+describe('settleFactor', () => {
+  it('starts at full intensity the moment the round ends', () => {
+    expect(settleFactor(0)).toBe(1)
+  })
+
+  it('eases down monotonically', () => {
+    const samples = [0, 0.25, 0.5, 0.75].map((f) => settleFactor(f * SETTLE_MS))
+    samples.forEach((value, i) => i && expect(value).toBeLessThan(samples[i - 1]))
+    expect(settleFactor(SETTLE_MS / 2)).toBeGreaterThan(0)
+  })
+
+  it('is fully settled after the settle time, and for any time beyond it', () => {
+    expect(settleFactor(SETTLE_MS)).toBe(0)
+    expect(settleFactor(SETTLE_MS * 10)).toBe(0)
+  })
+
+  it('lasts a few seconds', () => {
+    expect(SETTLE_MS).toBeGreaterThanOrEqual(2000)
+    expect(SETTLE_MS).toBeLessThanOrEqual(5000)
+  })
+})
+
+describe('calcUsd', () => {
+  it('costs nothing before the first tab', () => {
+    expect(calcUsd(0)).toBe(0)
+  })
+
+  it('gets pricier every single tab', () => {
+    for (let n = 1; n <= 100; n++) {
+      expect(calcUsd(n)).toBeGreaterThan(calcUsd(n - 1))
+    }
+  })
+
+  it('compounds as the context window fills up', () => {
+    expect(calcUsd(100)).toBe(12)
+    expect(calcUsd(200) / calcUsd(100)).toBeGreaterThan(2)
+  })
+
+  it('rounds to cents', () => {
+    expect(calcUsd(6)).toBe(0.16)
   })
 })

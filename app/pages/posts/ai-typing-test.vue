@@ -10,6 +10,13 @@ import {
   addHighScore,
   verdictFor,
   shuffle,
+  recentRate,
+  glowLevel,
+  glowShadow,
+  shakeAmplitude,
+  speedLineCount,
+  settleFactor,
+  calcUsd,
 } from '../../utils/tabtest.js'
 
 function loadScores() {
@@ -34,8 +41,24 @@ const phrases = ref(PHRASES)
 const text = computed(() => revealText(phrases.value, tabs.value))
 const verdict = computed(() => verdictFor(tps.value))
 
+// intensity follows the tab rate over the last second, so it flares and cools in real time
+const tabTimes = ref([])
+const level = computed(() => glowLevel(recentRate(tabTimes.value, elapsed.value)))
+const glow = computed(() => glowShadow(level.value))
+// the shake keeps going for a few seconds after the round, easing down to nothing
+const settle = ref(1)
+const shakePx = computed(() => Math.round(shakeAmplitude(level.value) * settle.value * 10) / 10)
+const isShaking = computed(() => shakePx.value >= 0.3)
+const speedLines = computed(() => speedLineCount(level.value))
+const usd = computed(() => calcUsd(tabs.value))
+const shakeStyle = computed(() => ({
+  '--shake-px': `${shakePx.value}px`,
+  '--shake-duration': `${(0.2 - level.value * 0.1).toFixed(2)}s`,
+}))
+
 let timer = null
 let cooldownTimer = null
+let settleTimer = null
 const isCoolingDown = ref(false)
 
 function stopTimer() {
@@ -46,9 +69,12 @@ function stopTimer() {
 function begin() {
   stopTimer()
   clearTimeout(cooldownTimer)
+  clearInterval(settleTimer)
+  settle.value = 1
   isCoolingDown.value = false
   phrases.value = shuffle(PHRASES)
   tabs.value = 0
+  tabTimes.value = []
   elapsed.value = 0
   isNewHighScore.value = false
   countdown.value = COUNTDOWN_SECONDS
@@ -80,6 +106,14 @@ function finishRound() {
   phase.value = 'done'
   elapsed.value = ROUND_SECONDS
 
+  const endedAt = performance.now()
+  settleTimer = setInterval(() => {
+    settle.value = settleFactor(performance.now() - endedAt)
+    if (settle.value === 0) {
+      clearInterval(settleTimer)
+    }
+  }, 50)
+
   // keep swallowing Tab so the final smashes don't tab focus around the page
   isCoolingDown.value = true
   cooldownTimer = setTimeout(() => (isCoolingDown.value = false), COOLDOWN_MS)
@@ -105,6 +139,7 @@ function onKeydown(event) {
   event.preventDefault()
   if (isPlaying && !event.repeat) {
     tabs.value++
+    tabTimes.value.push(elapsed.value)
   }
 }
 
@@ -113,6 +148,7 @@ onBeforeUnmount(() => {
   window.removeEventListener('keydown', onKeydown)
   stopTimer()
   clearTimeout(cooldownTimer)
+  clearInterval(settleTimer)
 })
 </script>
 
@@ -148,6 +184,8 @@ onBeforeUnmount(() => {
         <template v-else>
           <div
             class="flex justify-around text-center border rounded-sm py-2 border-stone-700 dark:border-lime-500"
+            :class="{ shake: isShaking }"
+            :style="shakeStyle"
             data-testid="hud"
           >
             <p>
@@ -164,10 +202,18 @@ onBeforeUnmount(() => {
                 {{ tps.toFixed(2) }}
               </span>
             </p>
+            <p>
+              <span class="block text-xs uppercase">USD</span>
+              <span class="text-2xl font-bold text-red-500" data-testid="usd">
+                ${{ usd.toFixed(2) }}
+              </span>
+            </p>
           </div>
 
           <p
             class="text-xl leading-relaxed min-h-32 p-4 border rounded-sm font-mono border-stone-700 dark:border-lime-500"
+            :class="{ shake: isShaking }"
+            :style="shakeStyle"
             data-testid="autocomplete"
           >
             <span
@@ -179,7 +225,27 @@ onBeforeUnmount(() => {
             <span v-if="phase === 'playing'" class="text-stone-400 dark:text-stone-600">{{
               text.next
             }}</span>
-            <span v-if="phase === 'playing'" class="blink">▮</span>
+            <span v-if="phase === 'playing'" class="tab-cursor-wrap">
+              <span
+                class="tab-cursor"
+                :class="{ blink: level === 0 }"
+                :style="{ boxShadow: glow }"
+                :data-glow="level"
+                aria-hidden="true"
+                data-testid="cursor"
+              />
+              <i
+                v-for="n in speedLines"
+                :key="n"
+                class="speed-line"
+                :style="{
+                  top: `${((n - 0.5) / speedLines) * 100}%`,
+                  animationDelay: `${n * -0.07}s`,
+                  '--speed-distance': `${20 + level * 40}px`,
+                }"
+                data-testid="speed-line"
+              />
+            </span>
           </p>
 
           <p v-if="phase === 'playing'" class="text-center font-bold pulse">
@@ -201,14 +267,28 @@ onBeforeUnmount(() => {
 
       <div data-testid="high-scores">
         <h2 class="text-2xl font-bold">Leaderboard (local, no cap)</h2>
-        <ol v-if="highScores.length" class="list-decimal list-inside">
-          <li v-for="(score, i) in highScores" :key="i">
-            <strong>{{ score.tps.toFixed(2) }} TPS</strong>
-            <span class="text-sm text-stone-600 dark:text-stone-400">
-              ({{ score.tabs }} tabs, {{ score.date }})
-            </span>
-          </li>
-        </ol>
+        <table v-if="highScores.length" class="my-2 text-left">
+          <thead class="text-xs uppercase text-stone-600 dark:text-stone-400">
+            <tr>
+              <th class="pr-4 font-normal">#</th>
+              <th class="px-4 text-right font-normal">TPS</th>
+              <th class="px-4 text-right font-normal">USD</th>
+              <th class="px-4 font-normal">Tabs</th>
+              <th class="pl-4 font-normal">When</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(score, i) in highScores" :key="i">
+              <td class="pr-4">{{ i + 1 }}</td>
+              <td class="px-4 text-right font-bold tabular-nums">{{ score.tps.toFixed(2) }}</td>
+              <td class="px-4 text-right tabular-nums text-red-500">
+                ${{ (score.usd ?? calcUsd(score.tabs)).toFixed(2) }}
+              </td>
+              <td class="px-4 tabular-nums">{{ score.tabs }}</td>
+              <td class="pl-4 text-sm text-stone-600 dark:text-stone-400">{{ score.date }}</td>
+            </tr>
+          </tbody>
+        </table>
         <p v-else>No scores yet. The leaderboard is cooked, empty, ngmi. Be the first.</p>
         <button v-if="highScores.length" class="button text-sm mt-2" @click="clearScores">
           Clear scores
@@ -217,3 +297,28 @@ onBeforeUnmount(() => {
     </section>
   </div>
 </template>
+
+<style>
+.tab-cursor-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: -0.2em; /* sit the block on the text baseline, dipping a little like a real cursor */
+}
+
+.tab-cursor {
+  display: block;
+  width: 0.6em;
+  height: 1.1em;
+  background: currentColor;
+  transition: box-shadow 120ms ease-out;
+}
+
+.speed-line {
+  position: absolute;
+  right: 100%;
+  width: 1.5em;
+  height: 2px;
+  background: linear-gradient(to left, hsl(50, 100%, 75%), transparent);
+  pointer-events: none;
+}
+</style>

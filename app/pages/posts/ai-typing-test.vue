@@ -140,6 +140,9 @@ function clearScores() {
   localStorage.removeItem(HIGH_SCORES_KEY)
 }
 
+// mirrors the physical Tab key so the on-screen key sinks along with it
+const isTabHeld = ref(false)
+
 function registerTab() {
   tabs.value++
   tabTimes.value.push(elapsed.value)
@@ -152,14 +155,27 @@ function onKeydown(event) {
     return
   }
   event.preventDefault()
-  if (isPlaying && !event.repeat) {
-    registerTab()
+  if (isPlaying) {
+    isTabHeld.value = true
+    if (!event.repeat) {
+      registerTab()
+    }
   }
 }
 
-onMounted(() => window.addEventListener('keydown', onKeydown))
+function onKeyup(event) {
+  if (event.key === 'Tab') {
+    isTabHeld.value = false
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', onKeydown)
+  window.addEventListener('keyup', onKeyup)
+})
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', onKeydown)
+  window.removeEventListener('keyup', onKeyup)
   stopTimer()
   clearTimeout(cooldownTimer)
   clearInterval(settleTimer)
@@ -271,6 +287,7 @@ onBeforeUnmount(() => {
             v-if="phase === 'playing'"
             type="button"
             class="tab-key mx-auto"
+            :class="{ pressed: isTabHeld }"
             aria-label="Tab"
             data-testid="tab-button"
             @click="registerTab"
@@ -350,7 +367,8 @@ onBeforeUnmount(() => {
   -webkit-tap-highlight-color: transparent;
 }
 
-.tab-key:active {
+.tab-key:active,
+.tab-key.pressed {
   transform: translateY(4px);
   box-shadow:
     inset 0 0 0 3px rgba(128, 128, 128, 0.35),

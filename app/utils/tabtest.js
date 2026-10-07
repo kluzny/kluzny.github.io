@@ -1,6 +1,6 @@
 export const COUNTDOWN_SECONDS = 5
 export const ROUND_SECONDS = 15
-export const COOLDOWN_MS = 1000
+export const COOLDOWN_MS = 2000
 export const MAX_HIGH_SCORES = 5
 export const HIGH_SCORES_KEY = 'tabTestHighScores'
 

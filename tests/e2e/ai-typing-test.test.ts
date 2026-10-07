@@ -60,12 +60,29 @@ test('the on-screen Tab button advances the prompt, centred below the board', as
   await expect(page.getByTestId('autocomplete')).toContainText('no cap, this')
 
   const box = async (id: string) => (await page.getByTestId(id).boundingBox())!
-  const [key, board] = [await box('tab-button'), await box('autocomplete')]
+  const [key, board, stage] = [
+    await box('tab-button'),
+    await box('autocomplete'),
+    await box('stage'),
+  ]
   expect(key.y).toBeGreaterThan(board.y + board.height)
-  expect(Math.abs(key.x + key.width / 2 - (board.x + board.width / 2))).toBeLessThan(2)
+  // the board itself shakes at this tab rate, so centre against the still stage around it
+  expect(Math.abs(key.x + key.width / 2 - (stage.x + stage.width / 2))).toBeLessThan(2)
 
   await page.clock.runFor(15000)
   await expect(page.getByTestId('tab-button')).toHaveCount(0)
+})
+
+test('the on-screen Tab button sinks while the Tab key is held', async ({ page }) => {
+  await page.getByRole('button', { name: /Begin/ }).click()
+  await page.clock.runFor(5000)
+
+  const button = page.getByTestId('tab-button')
+  await expect(button).not.toHaveClass(/pressed/)
+  await page.keyboard.down('Tab')
+  await expect(button).toHaveClass(/pressed/)
+  await page.keyboard.up('Tab')
+  await expect(button).not.toHaveClass(/pressed/)
 })
 
 test('tab does nothing before the round starts', async ({ page }) => {
@@ -114,7 +131,7 @@ test('the leaderboard does not shift when a round starts or ends', async ({ page
   expect(await top()).toBe(idle)
 })
 
-test('tab is swallowed for 1s after the round, then focus works again', async ({ page }) => {
+test('tab is swallowed for 2s after the round, then focus works again', async ({ page }) => {
   await page.getByRole('button', { name: /Begin/ }).click()
   await page.clock.runFor(5000)
   await page.clock.runFor(15000)
@@ -122,7 +139,7 @@ test('tab is swallowed for 1s after the round, then focus works again', async ({
   const focused = () => page.evaluate(() => document.activeElement?.tagName)
 
   await page.keyboard.press('Tab')
-  await page.clock.runFor(500)
+  await page.clock.runFor(1500)
   await page.keyboard.press('Tab')
   expect(await focused()).toBe('BODY')
 

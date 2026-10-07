@@ -59,4 +59,4 @@ make clean         # Remove build artifacts
 ## Code Style
 
 - No semicolons, single quotes, trailing commas (ES5), 100-char line width (Prettier)
-- Node 22 (see `.nvmrc`)
+- Node 24 (see `.nvmrc`)

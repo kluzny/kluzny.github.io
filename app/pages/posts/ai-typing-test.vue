@@ -173,7 +173,7 @@ onBeforeUnmount(() => {
       </p>
 
       <!-- tall enough for the results phase so starting a round doesn't shift the page -->
-      <div class="flex flex-col space-y-4 min-h-112" data-testid="stage">
+      <div class="flex flex-col space-y-4 min-h-100" data-testid="stage">
         <div v-if="phase === 'idle'" class="text-center space-y-2 my-auto">
           <p>
             No typing. No thinking. The agent is <em>agentic</em>, the vibes are

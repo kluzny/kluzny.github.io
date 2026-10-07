@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { content as fetchContent } from '../helpers/content.js'
+import { content as fetchContent } from '../utils/content.js'
 
 defineOptions({ name: 'PostContent' })
 

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import routes from '../../helpers/routes.js'
+import routes from '../../app/utils/routes.js'
 
 const pages = [
   { path: '/', title: 'kyle.luzny.dev' },

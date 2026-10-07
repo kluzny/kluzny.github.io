@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import routes from '../helpers/routes.js'
-import { simpleDate } from '../helpers/formatting.js'
+import routes from '../utils/routes.js'
+import { simpleDate } from '../utils/formatting.js'
 
 const { data: posts } = await useAsyncData(() => {
   return queryCollection('content')

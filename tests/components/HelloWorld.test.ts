@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import HelloWorld from '../../components/HelloWorld.vue'
+import HelloWorld from '../../app/components/HelloWorld.vue'
 
 describe('HelloWorld', () => {
   it('starts with count 0', () => {

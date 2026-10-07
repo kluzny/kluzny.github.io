@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import routes from '../helpers/routes.js'
+import routes from '../../utils/routes.js'
 
 const nonMissingRoutes = Object.keys(routes).filter((route) => route !== 'Missing Post?')
 

@@ -1,5 +1,5 @@
 <script setup>
-import { calcSpawn, updateHighScore } from '../../helpers/stress.js'
+import { calcSpawn, updateHighScore } from '../../utils/stress.js'
 
 const HIGH_SCORE = 'elementHighScore'
 

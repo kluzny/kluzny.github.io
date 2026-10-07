@@ -33,12 +33,12 @@ make clean         # Remove build artifacts
 
 **Routing**: Two entry points handle all pages:
 
-- `pages/index.vue` — home page
-- `pages/[...slug].vue` — catches all other routes, renders content pages
+- `app/pages/index.vue` — home page
+- `app/pages/[...slug].vue` — catches all other routes, renders content pages
 
 **Content**: Markdown files in `content/` map directly to routes. Frontmatter schema (title, description, date) is validated in `content.config.ts`.
 
-**Helpers**: `helpers/content.js` contains utilities for querying the content collection; `helpers/routes.js` defines route metadata; `helpers/mouse_effects.js` drives interactive cursor effects.
+**Utils**: `app/utils/content.js` contains utilities for querying the content collection; `app/utils/routes.js` defines route metadata; `app/utils/mouse_effects.js` drives interactive cursor effects.
 
 **Tests**: Vitest for unit/component tests (`tests/unit/`), Playwright for E2E tests (`tests/e2e/`).
 

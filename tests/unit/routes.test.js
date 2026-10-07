@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import routes from '../../helpers/routes.js'
+import routes from '../../app/utils/routes.js'
 
 // vitest runs from the project root
-const pagesDir = join(process.cwd(), 'pages/posts')
+const pagesDir = join(process.cwd(), 'app/pages/posts')
 const contentDir = join(process.cwd(), 'content')
 
 function slugOf(path) {

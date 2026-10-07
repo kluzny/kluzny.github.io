@@ -1,7 +1,7 @@
 // @vitest-environment nuxt
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import ExtLink from '../../components/ExtLink.vue'
+import ExtLink from '../../app/components/ExtLink.vue'
 
 const stubs = { Icon: true }
 

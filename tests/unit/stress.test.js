@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { calcSpawn, updateHighScore } from '../../helpers/stress.js'
+import { calcSpawn, updateHighScore } from '../../app/utils/stress.js'
 
 describe('calcSpawn', () => {
   it('returns 1 when spawnedCount is 1 (log10=0)', () => {

@@ -1,5 +1,5 @@
 <script setup>
-import routes from '../helpers/routes.js'
+import routes from '../utils/routes.js'
 
 const { vertical } = defineProps({
   vertical: {

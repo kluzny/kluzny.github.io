@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { simpleDate } from '../../helpers/formatting.js'
+import { simpleDate } from '../../app/utils/formatting.js'
 
 describe('simpleDate', () => {
   it('formats a date as yyyy-MM-dd', () => {

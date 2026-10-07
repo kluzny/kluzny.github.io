@@ -1,4 +1,5 @@
 export default {
+  'AI Typing Speed Test': '/posts/ai-typing-test',
   'JavaScript for LeetCode': '/posts/javascript-for-leetcode',
   'Reading List': '/posts/reading',
   Ergonomics: '/posts/ergonomics',

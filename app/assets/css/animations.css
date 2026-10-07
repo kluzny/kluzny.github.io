@@ -16,6 +16,23 @@
   }
 }
 
+.tab-pop {
+  animation: tab-pop 0.4s ease-out;
+}
+
+@keyframes tab-pop {
+  0% {
+    opacity: 0.3;
+    transform: translateY(0.4rem);
+    color: #78716c;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .pulse {
   --pulse-duration: 1s;
   animation: pulse var(--pulse-duration) infinite;

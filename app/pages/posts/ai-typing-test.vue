@@ -18,6 +18,7 @@ import {
   settleFactor,
   calcUsd,
 } from '../../utils/tabtest.js'
+import { createTabSound } from '../../utils/tab_sound.js'
 
 function loadScores() {
   try {
@@ -56,6 +57,9 @@ const shakeStyle = computed(() => ({
   '--shake-duration': `${(0.2 - level.value * 0.1).toFixed(2)}s`,
 }))
 
+const sound = createTabSound('/audio/ka-ching.mp3')
+const isSoundReady = ref(false)
+
 let timer = null
 let cooldownTimer = null
 let settleTimer = null
@@ -67,6 +71,11 @@ function stopTimer() {
 }
 
 function begin() {
+  // Begin is a click, so the browser lets the audio context start here
+  sound
+    .load()
+    .then(() => (isSoundReady.value = true))
+    .catch(() => {}) // the game works fine without sound
   stopTimer()
   clearTimeout(cooldownTimer)
   clearInterval(settleTimer)
@@ -140,6 +149,7 @@ function onKeydown(event) {
   if (isPlaying && !event.repeat) {
     tabs.value++
     tabTimes.value.push(elapsed.value)
+    sound.play()
   }
 }
 
@@ -149,6 +159,7 @@ onBeforeUnmount(() => {
   stopTimer()
   clearTimeout(cooldownTimer)
   clearInterval(settleTimer)
+  sound.dispose()
 })
 </script>
 
@@ -156,7 +167,7 @@ onBeforeUnmount(() => {
   <div>
     <Post content="/ai-typing-test" />
 
-    <section class="space-y-4" data-testid="game">
+    <section class="space-y-4" :data-sound="isSoundReady ? 'ready' : 'loading'" data-testid="game">
       <p class="text-sm text-stone-600 dark:text-stone-400">
         TPS stands for <strong>Tabs Per Second</strong>, not Tokens Per Second, bestie.
       </p>
@@ -265,7 +276,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <div data-testid="high-scores">
+      <div class="flex flex-col items-center" data-testid="high-scores">
         <h2 class="text-2xl font-bold">Leaderboard (local, no cap)</h2>
         <table v-if="highScores.length" class="my-2 text-left">
           <thead class="text-xs uppercase text-stone-600 dark:text-stone-400">

@@ -1,6 +1,16 @@
 import { test, expect } from '@playwright/test'
 
 test.beforeEach(async ({ page }) => {
+  // count sounds started, since headless Chromium can't be listened to
+  await page.addInitScript(() => {
+    const w = window as unknown as { __sounds: number }
+    w.__sounds = 0
+    const start = AudioBufferSourceNode.prototype.start
+    AudioBufferSourceNode.prototype.start = function (...args) {
+      w.__sounds++
+      return start.apply(this, args)
+    }
+  })
   // Math.random just under 1 makes the shuffle the identity, so the first phrase is pinned
   await page.addInitScript(() => {
     Math.random = () => 0.999999
@@ -182,4 +192,42 @@ test('the USD counter grows with every tab', async ({ page }) => {
     await page.keyboard.press('Tab')
   }
   await expect(page.getByTestId('usd')).toHaveText('$0.16')
+})
+
+test('each tab during play makes the ka-ching, and nothing else does', async ({ page }) => {
+  const sounds = () => page.evaluate(() => (window as unknown as { __sounds: number }).__sounds)
+
+  await page.getByRole('button', { name: /Begin/ }).click()
+  await expect(page.getByTestId('game')).toHaveAttribute('data-sound', 'ready')
+  await page.keyboard.press('Tab')
+  expect(await sounds()).toBe(0)
+
+  await page.clock.runFor(5000)
+  for (let i = 0; i < 3; i++) {
+    await page.keyboard.press('Tab')
+  }
+  expect(await sounds()).toBe(3)
+
+  await page.clock.runFor(15000)
+  await expect(page.getByTestId('results')).toBeVisible()
+  await page.keyboard.press('Tab')
+  expect(await sounds()).toBe(3)
+})
+
+test('the leaderboard is centred in the bottom area', async ({ page }) => {
+  await page.getByRole('button', { name: /Begin/ }).click()
+  await page.clock.runFor(5000)
+  await page.keyboard.press('Tab')
+  await page.clock.runFor(15000)
+  await expect(page.getByTestId('results')).toBeVisible()
+
+  const scores = page.getByTestId('high-scores')
+  await expect(scores).toHaveCSS('display', 'flex')
+  const centre = async (locator: ReturnType<typeof page.locator>) => {
+    const box = (await locator.boundingBox())!
+    return box.x + box.width / 2
+  }
+  const area = await centre(page.getByTestId('game'))
+  expect(Math.abs((await centre(scores.locator('table'))) - area)).toBeLessThan(2)
+  expect(Math.abs((await centre(scores.locator('h2'))) - area)).toBeLessThan(2)
 })

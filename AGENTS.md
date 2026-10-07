@@ -24,10 +24,9 @@ make clean         # Remove build artifacts
 
 ## Stack
 
-- **Nuxt 3** with SSR disabled (`ssr: false`) — generates a fully static site
+- **Nuxt 4** with SSR disabled (`ssr: false`) — generates a fully static site
 - **@nuxt/content** for markdown-based pages with Zod-validated frontmatter (`content.config.ts`)
 - **Tailwind CSS 4** via Vite plugin
-- **@nuxt/ui** component library
 - **GitHub Actions** deploys `master` pushes by running `npm run generate` and publishing `.output/public`
 
 ## Architecture

@@ -17,7 +17,6 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxtjs/robots', // load before @nuxt/content https://nuxtseo.com/docs/robots/guides/content
     '@nuxt/content',
-    '@nuxt/image',
     '@nuxt/test-utils',
     '@nuxtjs/color-mode',
   ],

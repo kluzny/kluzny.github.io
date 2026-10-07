@@ -17,7 +17,7 @@ const post = await fetchContent(props.content)
   <section :class="{ post: !!post, missing: !post }">
     <ContentRenderer v-if="post" :value="post" />
     <div v-else class="flex items-center missing">
-      <NuxtImg
+      <img
         src="/tux_head_sad.png"
         class="inline w-12 pr-2"
         alt="emoji sized pixelated bust of tux the linux penguin, portrayed sadly with a single tear."

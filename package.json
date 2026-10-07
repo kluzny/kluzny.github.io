@@ -29,7 +29,7 @@
     "@nuxtjs/color-mode": "^4.0.1",
     "@nuxtjs/robots": "^5.2.9",
     "@tailwindcss/vite": "^4.0.15",
-    "better-sqlite3": "^12.10.0",
+    "better-sqlite3": "^13.0.3",
     "cursor-effects": "^1.0.17",
     "date-fns": "^4.1.0",
     "nuxt": "^4.6.0",
@@ -37,9 +37,8 @@
     "seedrandom": "^3.0.5",
     "tailwindcss": "^4.0.15",
     "typescript": "^5.8.2",
-    "uuid": "^11.1.0",
-    "vue": "^3.5.43",
-    "vue-router": "^4.5.0"
+    "uuid": "^14.0.2",
+    "vue": "^3.5.43"
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.2",
@@ -58,8 +57,8 @@
   },
   "allowScripts": {
     "esbuild@0.28.2": true,
-    "better-sqlite3@12.11.1": true,
     "esbuild@0.27.7": true,
-    "unrs-resolver": false
+    "unrs-resolver": false,
+    "better-sqlite3": false
   }
 }

@@ -2,6 +2,7 @@
 import {
   COUNTDOWN_SECONDS,
   ROUND_SECONDS,
+  COOLDOWN_MS,
   HIGH_SCORES_KEY,
   PHRASES,
   calcTps,
@@ -34,6 +35,8 @@ const text = computed(() => revealText(phrases.value, tabs.value))
 const verdict = computed(() => verdictFor(tps.value))
 
 let timer = null
+let cooldownTimer = null
+const isCoolingDown = ref(false)
 
 function stopTimer() {
   clearInterval(timer)
@@ -42,6 +45,8 @@ function stopTimer() {
 
 function begin() {
   stopTimer()
+  clearTimeout(cooldownTimer)
+  isCoolingDown.value = false
   phrases.value = shuffle(PHRASES)
   tabs.value = 0
   elapsed.value = 0
@@ -75,6 +80,10 @@ function finishRound() {
   phase.value = 'done'
   elapsed.value = ROUND_SECONDS
 
+  // keep swallowing Tab so the final smashes don't tab focus around the page
+  isCoolingDown.value = true
+  cooldownTimer = setTimeout(() => (isCoolingDown.value = false), COOLDOWN_MS)
+
   const best = highScores.value[0]?.tps ?? 0
   isNewHighScore.value = tabs.value > 0 && tps.value > best
   if (tabs.value > 0) {
@@ -89,11 +98,12 @@ function clearScores() {
 }
 
 function onKeydown(event) {
-  if (event.key !== 'Tab' || phase.value !== 'playing') {
+  const isPlaying = phase.value === 'playing'
+  if (event.key !== 'Tab' || !(isPlaying || isCoolingDown.value)) {
     return
   }
   event.preventDefault()
-  if (!event.repeat) {
+  if (isPlaying && !event.repeat) {
     tabs.value++
   }
 }
@@ -102,6 +112,7 @@ onMounted(() => window.addEventListener('keydown', onKeydown))
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', onKeydown)
   stopTimer()
+  clearTimeout(cooldownTimer)
 })
 </script>
 

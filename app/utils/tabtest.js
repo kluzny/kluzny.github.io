@@ -1,5 +1,6 @@
 export const COUNTDOWN_SECONDS = 5
 export const ROUND_SECONDS = 15
+export const COOLDOWN_MS = 1000
 export const MAX_HIGH_SCORES = 5
 export const HIGH_SCORES_KEY = 'tabTestHighScores'
 
@@ -78,7 +79,7 @@ export function revealText(phrases = PHRASES, tabs) {
 }
 
 export function addHighScore(scores, tps, tabs, now = new Date()) {
-  const entry = { tps, tabs, date: now.toISOString().slice(0, 10) }
+  const entry = { tps, tabs, date: now.toISOString() }
   // Array.prototype.sort is stable, so ties keep the earlier score first
   return [...scores, entry].sort((a, b) => b.tps - a.tps).slice(0, MAX_HIGH_SCORES)
 }

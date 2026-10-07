@@ -86,7 +86,9 @@ describe('addHighScore', () => {
   const now = new Date('2026-10-06T12:00:00Z')
 
   it('adds a score to an empty list', () => {
-    expect(addHighScore([], 3, 45, now)).toEqual([{ tps: 3, tabs: 45, date: '2026-10-06' }])
+    expect(addHighScore([], 3, 45, now)).toEqual([
+      { tps: 3, tabs: 45, date: '2026-10-06T12:00:00.000Z' },
+    ])
   })
 
   it('sorts descending by tps', () => {
@@ -108,7 +110,7 @@ describe('addHighScore', () => {
     const scores = [{ tps: 4, tabs: 60, date: '2026-10-01' }]
     expect(addHighScore(scores, 4, 60, now).map((s) => s.date)).toEqual([
       '2026-10-01',
-      '2026-10-06',
+      '2026-10-06T12:00:00.000Z',
     ])
   })
 

@@ -75,3 +75,20 @@ test('the leaderboard does not shift when a round starts or ends', async ({ page
   await expect(page.getByTestId('results')).toBeVisible()
   expect(await top()).toBe(idle)
 })
+
+test('tab is swallowed for 1s after the round, then focus works again', async ({ page }) => {
+  await page.getByRole('button', { name: /Begin/ }).click()
+  await page.clock.runFor(5000)
+  await page.clock.runFor(15000)
+  await expect(page.getByTestId('results')).toBeVisible()
+  const focused = () => page.evaluate(() => document.activeElement?.tagName)
+
+  await page.keyboard.press('Tab')
+  await page.clock.runFor(500)
+  await page.keyboard.press('Tab')
+  expect(await focused()).toBe('BODY')
+
+  await page.clock.runFor(600)
+  await page.keyboard.press('Tab')
+  expect(await focused()).not.toBe('BODY')
+})

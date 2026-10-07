@@ -6,4 +6,4 @@ description: 'Hit tab, let the agent cook. Tabs per second, not tokens.'
 
 # {{ $doc.title }}
 
-Typing is a skill issue. The agent writes the code now, and your only job is to hit <kbd>Tab</kbd> as fast as humanly possible. You get 15 seconds. Lock in.
+Typing is a skill issue. The agent writes the code now. You get 15 seconds. Lock in.
